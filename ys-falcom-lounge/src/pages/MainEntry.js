@@ -1,12 +1,9 @@
 /* eslint-disable */
 import React from 'react';
 import styled from 'styled-components';
-import goddesses from '../images/ys-goddesses.jpg';
-// import lacrimosa from '../images/ys8-adol-dana.jpg';
-// import monstrum from '../images/ys9_characters.png';
 import { useHistory } from 'react-router-dom';
 
-const Home = () => {
+const MainEntry = () => {
   const history = useHistory();
   return (
     <Wrapper>
@@ -26,10 +23,6 @@ const Home = () => {
 };
 
 const Wrapper = styled.div``;
-
-const MainImg = styled.img`
-  width: 400px;
-`;
 
 const MainTitle = styled.p`
   font-size: 40px;
@@ -82,4 +75,4 @@ const MoveBtn = styled.button`
   }
 `;
 
-export default Home;
+export default MainEntry;

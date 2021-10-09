@@ -1,50 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import Header from '../components/Header';
 import goddesses from '../images/ys-goddesses.jpg';
 import roos from '../images/Art_roo.jpg';
+import Background from '../components/Background';
 
 const Home = (props) => {
   const history = useHistory();
 
   return (
-    <Wrapper>
-      <Header />
-      <HomeBg>
-        <HomeTitle>34-year Anniversary!</HomeTitle>
-        <HomeDesc>
-          Action role-playing game developed by Nihon Falcom. <br /> The first one released in <span>1987</span>.
-        </HomeDesc>
+    <Background>
+      <HomeTitle>34-year Anniversary!</HomeTitle>
+      <HomeDesc>
+        Action role-playing game developed by Nihon Falcom. <br /> The first one released in <span>1987</span>.
+      </HomeDesc>
 
-        <MoveGroup>
-          <MoveHistory onClick={() => history.push('/history')}>
-            <img src={goddesses} alt='move to history' />
-          </MoveHistory>
-          <MoveGallery onClick={() => history.push('/gallery')}>
-            <img src={roos} alt='move to gallery' />
-          </MoveGallery>
-        </MoveGroup>
-      </HomeBg>
-    </Wrapper>
+      <MoveGroup>
+        <MoveHistory onClick={() => history.push('/history')}>
+          <img src={goddesses} alt='move to history' />
+        </MoveHistory>
+        <MoveGallery onClick={() => history.push('/gallery')}>
+          <img src={roos} alt='move to gallery' />
+        </MoveGallery>
+      </MoveGroup>
+    </Background>
   );
 };
-
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.3);
-`;
-
-const HomeBg = styled.div`
-  width: 90%;
-  min-height: 95%;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const HomeTitle = styled.h1`
   font-size: 50px;
