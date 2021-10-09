@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
 import Select from 'react-select';
+import imageData from '../image.json';
 
 const Gallery = (props) => {
   const [selected, setSelected] = useState('Ys VIII: Lacrimosa of Dana');
@@ -15,6 +17,25 @@ const Gallery = (props) => {
     'Ys VIII: Lacrimosa of Dana',
     'Ys IX: Monstrum Nox',
   ];
+
+  useEffect(() => {
+    switch (keyword) {
+      case 'Origin':
+        return <Image />;
+      case 'Chronicles':
+        return <Image />;
+      case 'Napishtim':
+        return <Image />;
+      case 'Celceta':
+        return <Image />;
+      case 'Lacrimosa':
+        return <Image />;
+      case 'Monstrum':
+        return <Image />;
+      default:
+        return null;
+    }
+  }, [keyword]);
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
@@ -54,26 +75,6 @@ const Gallery = (props) => {
           ))}
         </select>
       </FilterDiv>
-      <ImageDisplay>
-        {(() => {
-          switch (keyword) {
-            case 'Origin':
-              return <Image />;
-            case 'Chronicles':
-              return <Image />;
-            case 'Napishtim':
-              return <Image />;
-            case 'Celceta':
-              return <Image />;
-            case 'Lacrimosa':
-              return <Image />;
-            case 'Monstrum':
-              return <Image />;
-            default:
-              return null;
-          }
-        })()}
-      </ImageDisplay>
     </Background>
   );
 };
@@ -86,12 +87,11 @@ const ImageDisplay = styled.div`
   width: 700px;
   height: 500px;
   display: flex;
+  flex-direction: column;
 `;
 
 const Image = styled.img`
-  width: 400px;
-  height: 300px;
-  background: lightcoral;
+  width: 300px;
 `;
 
 // const LeftColumn = styled.div`
