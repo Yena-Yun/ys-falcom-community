@@ -1,8 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Main from './pages/Main';
+import Home from './pages/Home';
 
 function App() {
-  return <div className='App'>이스 팔콤 라운지</div>;
+  return (
+    <div className='App'>
+      <Header />
+      <Switch>
+        <Route path='/' exact component={Main} />
+        <Route path='/home' component={Home} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
