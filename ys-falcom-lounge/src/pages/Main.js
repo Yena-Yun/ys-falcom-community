@@ -9,11 +9,11 @@ import { useHistory } from 'react-router-dom';
 const Home = () => {
   const history = useHistory();
   return (
-    <>
+    <Wrapper>
       <MainHeader>
         <MainTitle>Welcome to Ys-Lounge!</MainTitle>
         <BtnGroup>
-          <MoveBtn onClick={() => history.push('/home')}>메인으로 가기</MoveBtn>
+          <MoveBtn onClick={() => history.push('/home')}>라운지로 가기</MoveBtn>
           <MoveBtn>
             <a href='https://play-ys.com/' target='_blank'>
               이스 공식 홈페이지
@@ -21,9 +21,11 @@ const Home = () => {
           </MoveBtn>
         </BtnGroup>
       </MainHeader>
-    </>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div``;
 
 const MainImg = styled.img`
   width: 400px;
