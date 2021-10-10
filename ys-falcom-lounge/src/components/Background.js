@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 const HomeBg = styled.div`
-  width: 90%;
+  width: 70%;
   min-height: 95%;
   margin: auto;
   background: rgba(255, 255, 255, 0.8);

@@ -1,87 +1,152 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
+import { useDispatch } from 'react-redux';
+import { addFilter } from '../redux/modules/filter';
+import { setFilteredImage } from '../redux/modules/post';
 import Select from 'react-select';
 import imageData from '../image.json';
 
 const Gallery = (props) => {
-  const [selected, setSelected] = useState('Ys VIII: Lacrimosa of Dana');
-  const [keyword, setKeyword] = useState('Lacrimosa');
+  const dispatch = useDispatch();
+  const [selected, setSelected] = useState('');
+  // const [nameArr, setNameArr] = useState([]);
+  // const [urlArr, setUrlArr] = useState([]);
+  const [filteredImage, setFilteredImage] = useState([]);
 
   const selectList = [
+    'Select Series',
+    'All',
     'Ys Origin',
-    'Ys I & II Chronicles+',
+    'Ys I & II Chronicles',
     'Ys VI: The Ark of Napishtim',
     'Ys: Memories of Celceta',
     'Ys VIII: Lacrimosa of Dana',
     'Ys IX: Monstrum Nox',
   ];
 
-  useEffect(() => {
-    switch (keyword) {
-      case 'Origin':
-        return <Image />;
-      case 'Chronicles':
-        return <Image />;
-      case 'Napishtim':
-        return <Image />;
-      case 'Celceta':
-        return <Image />;
-      case 'Lacrimosa':
-        return <Image />;
-      case 'Monstrum':
-        return <Image />;
-      default:
-        return null;
-    }
-  }, [keyword]);
+  // React.useEffect(() => {
+  //   let list_arr = [];
+
+  //   switch (category) {
+  //     // case 'All':
+  //     //   imageData.forEach((val) => {
+  //     //     list_arr.push(val.url);
+  //     //   });
+  //     //   setArr(list_arr);
+
+  //     //   break;
+  //     case 'Lacrimosa':
+  //       imageData.lacrimosa.forEach((val) => {
+  //         list_arr.push(val.url);
+  //       });
+  //       setArr(list_arr);
+  //       break;
+  //     case 'Monstrum':
+  //       imageData.monstrum.forEach((val) => {
+  //         list_arr.push(val.url);
+  //       });
+  //       setArr(list_arr);
+  //       break;
+  //   }
+  // }, []);
 
   const handleSelect = (e) => {
-    setSelected(e.target.value);
-    switch (selected) {
-      case 'Ys Origin':
-        setKeyword('Origin');
-        break;
-      case 'Ys I & II Chronicles+':
-        setKeyword('Chronicles');
-        break;
-      case 'Ys VI: The Ark of Napishtim':
-        setKeyword('Napishtim');
-        break;
-      case 'Ys: Memories of Celceta':
-        setKeyword('Celceta');
-        break;
-      case 'Ys VIII: Lacrimosa of Dana':
-        setKeyword('Lacrimosa');
-        break;
-      case 'Ys IX: Monstrum Nox':
-        setKeyword('Monstrum');
-        break;
-      default:
-        return null;
-    }
+    let select = e.target.value;
+    console.log(select);
+
+    if (select === 'All') setSelected('all');
+    else if (select === 'Ys Origin') setSelected('origin');
+    else if (select === 'Ys I & II Chronicles') setSelected('chronicles');
+    else if (select === 'Ys VI: The Ark of Napishtim') setSelected('napishtim');
+    else if (select === 'Ys: Memories of Celceta') setSelected('celceta');
+    else if (select === 'Ys VIII: Lacrimosa of Dana') setSelected('lacrimosa');
+    else if (select === 'Ys IX: Monstrum Nox') setSelected('monstrum');
   };
+
+  // console.log(selected);
+  // console.log(typeof selected);
+
+  useEffect(() => {
+    if (selected === 'lacrimosa') {
+      //   dispatch(setFilteredImage(selected));
+
+      imageData.lacrimosa.forEach((image) => {
+        console.log(image);
+
+        // let copy = [...filteredImage];
+        // copy.push(image);
+        setFilteredImage([...filteredImage, image]);
+      });
+
+      // imageData.lacrimosa.forEach((image) => {
+      //   console.log(image.name);
+      //   console.log(image.url);
+      // });
+      // default:
+      //   return imageData;
+    }
+  }, [selected]);
 
   return (
     <Background>
-      <div>이스 Gallery</div>
-      <FilterDiv>
-        <select onChange={handleSelect} value={selected}>
-          {selectList.map((item) => (
-            <option value={item} key={item}>
-              {item}
-            </option>
-          ))}
-        </select>
-      </FilterDiv>
+      <HeaderGroup>
+        <Title>Gallery</Title>
+        <Filter onChange={handleSelect} value={selected}>
+          {selectList.map((item, idx) => {
+            return (
+              <option value={item} key={idx}>
+                {item}
+              </option>
+            );
+          })}
+        </Filter>
+      </HeaderGroup>
+      <Line />
+      <ImageList>
+        {filteredImage.map((image) => {
+          console.log(image);
+          console.log(image.id);
+          return <ImageDiv key={image.id} src={image.url} alt={image.name} />;
+        })}
+      </ImageList>
     </Background>
   );
 };
 
-const FilterDiv = styled.div``;
+const HeaderGroup = styled.div`
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-const Filter = styled.select``;
+const Title = styled.div`
+  width: 100%;
+  margin: 20px 0 16px;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const Line = styled.div`
+  width: 95%;
+  border-bottom: 2px solid lightgray;
+`;
+
+const ImageList = styled.div``;
+
+const ImageDiv = styled.img``;
+
+const Filter = styled.select`
+  width: 400px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 0 8px;
+`;
 
 const ImageDisplay = styled.div`
   width: 700px;

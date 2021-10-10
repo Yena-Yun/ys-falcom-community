@@ -10,10 +10,10 @@ const Home = (props) => {
 
   return (
     <Background>
-      <HomeTitle>34-year Anniversary!</HomeTitle>
-      <HomeDesc>
+      <Title>34-year Anniversary!</Title>
+      <Desc>
         Action role-playing game developed by Nihon Falcom. <br /> The first one released in <span>1987</span>.
-      </HomeDesc>
+      </Desc>
 
       <MoveGroup>
         <MoveHistory onClick={() => history.push('/history')}>
@@ -27,12 +27,13 @@ const Home = (props) => {
   );
 };
 
-const HomeTitle = styled.h1`
+const Title = styled.div`
+  margin-top: 20px;
   font-size: 50px;
   font-weight: 700;
 `;
 
-const HomeDesc = styled.div`
+const Desc = styled.div`
   width: 700px;
   padding: 16px;
   font-size: 20px;

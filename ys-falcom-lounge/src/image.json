@@ -1,12 +1,34 @@
 {
   "lacrimosa": [
     {
+      "id": 0,
       "name": "Strong Dana",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHWkUGCayvyJANXRQN49X_738TAXxy1kzBQ&usqp=CAU"
     },
     {
-      "name": "ys8-battle",
+      "id": 1,
+      "name": "Battle",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMIypTcAjhls5pQKT6nhkDw_rWTTMkMVrz1w&usqp=CAU"
+    }
+  ],
+  "monstrum": [
+    {
+      "name": "Scene Transition Image",
+      "url": "http://pbs.twimg.com/media/Dvd2hYqU0AARvQe.jpg"
+    },
+    {
+      "name": "Anemona on the Colosseum",
+      "url": "https://www.vgchartz.com/articles_media/images/ys-ix-balduq-1.jpg"
+    }
+  ],
+  "chronicles": [
+    {
+      "name": "Lilia and Adol in the Opening",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPHSroSX33wCc4BOdxBeIHpBSNOoFYtywRkw&usqp=CAU"
+    },
+    {
+      "name": "Feena in the Prison",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjH_gZaVLJI8NhqWOMNYXjxiN-q-k81ID_w&usqp=CAU"
     }
   ]
 }
