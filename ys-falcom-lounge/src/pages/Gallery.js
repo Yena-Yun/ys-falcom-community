@@ -72,13 +72,12 @@ const Gallery = (props) => {
     if (selected === 'lacrimosa') {
       //   dispatch(setFilteredImage(selected));
 
-      imageData.lacrimosa.forEach((image) => {
-        console.log(image);
+      setFilteredImage(imageData.lacrimosa);
+      // console.log(image);
 
-        // let copy = [...filteredImage];
-        // copy.push(image);
-        setFilteredImage([...filteredImage, image]);
-      });
+      // let copy = [...filteredImage];
+      // copy.push(image);
+      // setFilteredImage([...filteredImage, image]);
 
       // imageData.lacrimosa.forEach((image) => {
       //   console.log(image.name);
