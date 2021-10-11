@@ -22,16 +22,19 @@ const MainEntry = () => {
   );
 };
 
-const Wrapper = styled.div``;
-
-const MainTitle = styled.p`
-  font-size: 40px;
-  font-weight: 700;
+const Wrapper = styled.div`
+  width: 100vw;
+  margin-top: 180px;
 `;
 
 const MainHeader = styled.div`
   background: rgba(255, 255, 255, 0.5);
-  padding: 8px 0 36px;
+  padding: 24px 0 70px;
+`;
+
+const MainTitle = styled.p`
+  font-size: 40px;
+  font-weight: 700;
 `;
 
 const BtnGroup = styled.div`

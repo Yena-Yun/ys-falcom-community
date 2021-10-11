@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
 import { LikeOutlined, LikeFilled } from '@ant-design/icons';
-import imageData from '../image.json';
+import imageData from '../gallery.json';
 
 const Gallery = (props) => {
   const [selected, setSelected] = useState('');
@@ -59,11 +59,11 @@ const Gallery = (props) => {
       </HeaderGroup>
       <Line />
       <ImageList>
-        {filteredImage.map((image) => {
+        {filteredImage.map((image, idx) => {
           return (
             <ImageFrame>
               <ImageTitle>{image.name}</ImageTitle>
-              <ImageDiv key={image.id} src={image.url} alt={image.name} />
+              <ImageDiv key={idx} src={image.url} alt={image.name} />
               <LikeBtn>
                 <LikeOutlined />0
               </LikeBtn>

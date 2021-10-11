@@ -4,6 +4,7 @@ import MainEntry from './pages/MainEntry';
 import Home from './pages/Home';
 import History from './pages/History';
 import Gallery from './pages/Gallery';
+import Tournament from './pages/Tournament';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/home' component={Home} />
         <Route path='/history' component={History} />
         <Route path='/gallery' component={Gallery} />
+        <Route path='/tournament' component={Tournament} />
       </Switch>
     </div>
   );

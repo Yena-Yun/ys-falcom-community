@@ -1,4 +1,26 @@
 {
+  "origin": [
+    {
+      "name": "battle",
+      "url": "https://gamesfromtheblackhole.files.wordpress.com/2020/11/ys-origin-lead-image.jpg?w=1280"
+    }
+  ],
+  "chronicles": [
+    {
+      "name": "Lilia and Adol in the Opening",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPHSroSX33wCc4BOdxBeIHpBSNOoFYtywRkw&usqp=CAU"
+    },
+    {
+      "name": "Feena in the Prison",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjH_gZaVLJI8NhqWOMNYXjxiN-q-k81ID_w&usqp=CAU"
+    }
+  ],
+  "celceta": [
+    {
+      "name": "Adol in front of a zeolite",
+      "url": "https://www.kyeonggi.com/news/photo/202004/2276429_1060287_2419.png"
+    }
+  ],
   "lacrimosa": [
     {
       "id": 0,
@@ -9,6 +31,11 @@
       "id": 1,
       "name": "Battle",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMIypTcAjhls5pQKT6nhkDw_rWTTMkMVrz1w&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "name": "Dana True Ending",
+      "url": "https://i.pinimg.com/originals/e1/85/2a/e1852ac12d4640859cb1802a6b613938.png"
     }
   ],
   "monstrum": [
@@ -23,16 +50,6 @@
     {
       "name": "Six Characters",
       "url": "https://steamuserimages-a.akamaihd.net/ugc/1706284618676454365/5C0D868EB4BFA929D880F60FD0D959C98715CF85/?imw=1920&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
-    }
-  ],
-  "chronicles": [
-    {
-      "name": "Lilia and Adol in the Opening",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPHSroSX33wCc4BOdxBeIHpBSNOoFYtywRkw&usqp=CAU"
-    },
-    {
-      "name": "Feena in the Prison",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjH_gZaVLJI8NhqWOMNYXjxiN-q-k81ID_w&usqp=CAU"
     }
   ]
 }

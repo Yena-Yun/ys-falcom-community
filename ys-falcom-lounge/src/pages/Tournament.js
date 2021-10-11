@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
 
-const History = (props) => {
+const Tournament = (props) => {
+  // var myPix = new Array("images/lion. jpg", "images/tiger. jpg", "images/bear. jpg");
+  // var randomNum = Math. floor(Math. random() * myPix. length);
+  // document.getElementById("myPicture").src = myPix[randomNum];
+
   return (
     <Background>
       <HeaderGroup>
-        <Title>History</Title>
+        <Title>Bias Tournament</Title>
       </HeaderGroup>
       <Line />
       <Container></Container>
@@ -39,4 +43,4 @@ const Container = styled.div`
   width: 95%;
 `;
 
-export default History;
+export default Tournament;

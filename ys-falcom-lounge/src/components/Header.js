@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import ys_logo from '../images/header_logo.png';
+import { useHistory } from 'react-router-dom';
 // import Burger from './Burger';
 
 const Header = (props) => {
+  const history = useHistory();
+
   return (
     <>
       <Wrapper>
         <LogoImage src={ys_logo} />
         <NavMenu>
-          <Nav>Walkthrough</Nav>
-          <Nav>Bias Tournament</Nav>
+          <NavLink>Walkthrough</NavLink>
+          <NavLink onClick={() => history.push('/tournament')}>Bias Tournament</NavLink>
         </NavMenu>
       </Wrapper>
-      <Spacer />
     </>
   );
 };
@@ -42,13 +44,14 @@ const NavMenu = styled.nav`
   padding-top: 30px;
 `;
 
-const Nav = styled.div`
+const NavLink = styled.div`
   color: #fff;
+  cursor: pointer;
 `;
 
 // header를 fixed로 설정했을 때 header 하단에 나오는 콘텐츠와 헤더 위치가 겹치는 것 방지
-const Spacer = styled.div`
-  height: 1.5rem;
-`;
+// const Spacer = styled.div`
+//   height: 1rem;
+// `;
 
 export default Header;
