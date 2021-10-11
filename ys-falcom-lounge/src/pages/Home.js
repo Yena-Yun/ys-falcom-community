@@ -12,7 +12,7 @@ const Home = (props) => {
     <Background>
       <Title>34-year Anniversary!</Title>
       <Desc>
-        Action role-playing game developed by Nihon Falcom. <br /> The first one released in <span>1987</span>.
+        Action role-playing game developed by Nihon Falcom. <br /> First one released in <span>1987</span>.
       </Desc>
 
       <MoveGroup>

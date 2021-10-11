@@ -2,17 +2,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
-import { useDispatch } from 'react-redux';
-import { addFilter } from '../redux/modules/filter';
-import { setFilteredImage } from '../redux/modules/post';
-import Select from 'react-select';
+import { LikeOutlined, LikeFilled } from '@ant-design/icons';
 import imageData from '../image.json';
 
 const Gallery = (props) => {
-  const dispatch = useDispatch();
   const [selected, setSelected] = useState('');
-  // const [nameArr, setNameArr] = useState([]);
-  // const [urlArr, setUrlArr] = useState([]);
   const [filteredImage, setFilteredImage] = useState([]);
 
   const selectList = [
@@ -25,32 +19,6 @@ const Gallery = (props) => {
     'Ys VIII: Lacrimosa of Dana',
     'Ys IX: Monstrum Nox',
   ];
-
-  // React.useEffect(() => {
-  //   let list_arr = [];
-
-  //   switch (category) {
-  //     // case 'All':
-  //     //   imageData.forEach((val) => {
-  //     //     list_arr.push(val.url);
-  //     //   });
-  //     //   setArr(list_arr);
-
-  //     //   break;
-  //     case 'Lacrimosa':
-  //       imageData.lacrimosa.forEach((val) => {
-  //         list_arr.push(val.url);
-  //       });
-  //       setArr(list_arr);
-  //       break;
-  //     case 'Monstrum':
-  //       imageData.monstrum.forEach((val) => {
-  //         list_arr.push(val.url);
-  //       });
-  //       setArr(list_arr);
-  //       break;
-  //   }
-  // }, []);
 
   const handleSelect = (e) => {
     let select = e.target.value;
@@ -65,26 +33,13 @@ const Gallery = (props) => {
     else if (select === 'Ys IX: Monstrum Nox') setSelected('monstrum');
   };
 
-  // console.log(selected);
-  // console.log(typeof selected);
-
   useEffect(() => {
     if (selected === 'lacrimosa') {
-      //   dispatch(setFilteredImage(selected));
-
       setFilteredImage(imageData.lacrimosa);
-      // console.log(image);
-
-      // let copy = [...filteredImage];
-      // copy.push(image);
-      // setFilteredImage([...filteredImage, image]);
-
-      // imageData.lacrimosa.forEach((image) => {
-      //   console.log(image.name);
-      //   console.log(image.url);
-      // });
-      // default:
-      //   return imageData;
+    } else if (selected === 'chronicles') {
+      setFilteredImage(imageData.chronicles);
+    } else if (selected === 'monstrum') {
+      setFilteredImage(imageData.monstrum);
     }
   }, [selected]);
 
@@ -105,9 +60,15 @@ const Gallery = (props) => {
       <Line />
       <ImageList>
         {filteredImage.map((image) => {
-          console.log(image);
-          console.log(image.id);
-          return <ImageDiv key={image.id} src={image.url} alt={image.name} />;
+          return (
+            <ImageFrame>
+              <ImageTitle>{image.name}</ImageTitle>
+              <ImageDiv key={image.id} src={image.url} alt={image.name} />
+              <LikeBtn>
+                <LikeOutlined />0
+              </LikeBtn>
+            </ImageFrame>
+          );
         })}
       </ImageList>
     </Background>
@@ -135,9 +96,46 @@ const Line = styled.div`
   border-bottom: 2px solid lightgray;
 `;
 
-const ImageList = styled.div``;
+const ImageList = styled.div`
+  width: 95%;
+`;
 
-const ImageDiv = styled.img``;
+const ImageFrame = styled.div`
+  width: 320px;
+  margin: 18px;
+  padding: 0 0 35px;
+  background: #0c0e25;
+  float: left;
+  overflow: hidden;
+`;
+
+const ImageTitle = styled.p`
+  font-size: 20px;
+  color: #fff;
+`;
+
+const ImageDiv = styled.img`
+  max-width: 300px;
+  min-width: 300px;
+`;
+
+const LikeBtn = styled.button`
+  color: #fff;
+  font-size: 18px;
+  width: 45px;
+  padding: 6px 3px 4px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: -20px;
+  right: -265px;
+
+  &:hover {
+    color: #fff;
+    background: rgba(172, 179, 255, 0.3);
+    cursor: pointer;
+  }
+`;
 
 const Filter = styled.select`
   width: 400px;
@@ -146,26 +144,5 @@ const Filter = styled.select`
   border-radius: 4px;
   padding: 0 8px;
 `;
-
-const ImageDisplay = styled.div`
-  width: 700px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Image = styled.img`
-  width: 300px;
-`;
-
-// const LeftColumn = styled.div`
-//   flex: 1;
-//   background: yellow;
-// `;
-
-// const RightColumn = styled.div`
-//   flex: 1;
-//   background: lime;
-// `;
 
 export default Gallery;
