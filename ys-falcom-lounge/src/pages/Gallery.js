@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
 import { LikeOutlined, LikeFilled } from '@ant-design/icons';
-import imageData from '../gallery.json';
+import imageData from '../lib/gallery.json';
 
 const Gallery = (props) => {
   const [selected, setSelected] = useState('');
