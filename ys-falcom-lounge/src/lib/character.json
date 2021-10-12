@@ -1,0 +1,134 @@
+{
+  "origin": [
+    {
+      "name": "Hugo Fact",
+      "url": "https://static.wikia.nocookie.net/isu/images/6/66/Hugo_Fact.jpg/revision/latest/scale-to-width-down/563?cb=20200517161656"
+    },
+    {
+      "name": "Yunica Tovah",
+      "url": "https://static.wikia.nocookie.net/isu/images/8/85/Yunica.jpg/revision/latest/scale-to-width-down/90?cb=20130928181607"
+    },
+    {
+      "name": "Toal Fact",
+      "url": "https://static.wikia.nocookie.net/isu/images/0/09/Toal.jpg/revision/latest/scale-to-width-down/130?cb=20140223102233"
+    },
+    {
+      "name": "Feena",
+      "url": "https://www.giantbomb.com/a/uploads/scale_small/0/2453/2442756-feena.%28ys%29.full.796453.jpg"
+    },
+    {
+      "name": "Reah",
+      "url": "https://www.giantbomb.com/a/uploads/scale_small/0/2453/2442758-reah.full.796454.jpg"
+    },
+    {
+      "name": "Epona",
+      "url": "https://static.wikia.nocookie.net/isu/images/9/93/Epona_Portrait_-_Ys_Origin.png/revision/latest/scale-to-width-down/288?cb=20210815194758"
+    },
+    {
+      "name": "Kishgal",
+      "url": "https://static.wikia.nocookie.net/isu/images/9/91/Kishgal_Portrait_-_Ys_Origin.png/revision/latest/scale-to-width-down/350?cb=20210815194832"
+    },
+    {
+      "name": "Zava",
+      "url": "https://static.wikia.nocookie.net/isu/images/c/ce/Zava_Portrait_-_Ys_Origin.png/revision/latest/scale-to-width-down/350?cb=20210815192345"
+    }
+  ],
+  "chronicles": [
+    {
+      "name": "Adol Christin",
+      "url": "https://static.wikia.nocookie.net/isu/images/9/93/Adol_Ys_Chronicles.png/revision/latest/top-crop/width/200/height/150?cb=20180928082343"
+    },
+    {
+      "name": "Feena",
+      "url": "https://static.wikia.nocookie.net/isu/images/9/90/Feena_%28Ys_I_Chronicles%29.png/revision/latest/top-crop/width/200/height/150?cb=20200708231147"
+    },
+    {
+      "name": "Reah",
+      "url": "https://static.wikia.nocookie.net/isu/images/1/1d/Reah_%28Ys_I_Chronicles%29.png/revision/latest/top-crop/width/200/height/150?cb=20200708231801"
+    },
+    {
+      "name": "Lilia",
+      "url": "https://static.wikia.nocookie.net/isu/images/c/c6/Lilia.jpg/revision/latest/scale-to-width-down/203?cb=20210508132421"
+    },
+    {
+      "name": "Sara Tovah",
+      "url": "https://static.wikia.nocookie.net/isu/images/4/4e/Ys_saratovah.png/revision/latest/top-crop/width/200/height/150?cb=20210814182900"
+    },
+    {
+      "name": "Jeba Tovah",
+      "url": "https://static.wikia.nocookie.net/isu/images/d/d2/Jeba_Tovah_Chronicles.png/revision/latest/top-crop/width/200/height/150?cb=20210814193345"
+    },
+    {
+      "name": "Goban Tovah",
+      "url": "https://static.wikia.nocookie.net/isu/images/9/92/Goban_Tovah_Chronicles.png/revision/latest/top-crop/width/200/height/150?cb=20210819181026"
+    },
+    {
+      "name": "Dogi",
+      "url": "https://static.wikia.nocookie.net/isu/images/c/c1/Ys_1_Chronicles_Dogi.png/revision/latest/top-crop/width/200/height/150?cb=20210712235426"
+    },
+    {
+      "name": "Luta Gemma",
+      "url": "hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTllt5Obqp4AnhyxAOjgs8rKR0dUxuONYbzacVeClX4pvGGttdqQqFHGgno1ujj1n7z69c&usqp=CAU"
+    },
+    {
+      "name": "Dark Fact",
+      "url": "https://static.wikia.nocookie.net/isu/images/e/e6/Dark_Fact.png/revision/latest/top-crop/width/200/height/150?cb=20181013231049"
+    }
+  ],
+  "napishtim": [
+    {
+      "name": "Adol Christin",
+      "url": "http://www.worldofys.com/ysvi/images/character-adol.png"
+    },
+    {
+      "name": "Olha",
+      "url": "http://www.worldofys.com/ysvi/images/character-olha.png"
+    },
+    {
+      "name": "Isha",
+      "url": "http://www.worldofys.com/ysvi/images/character-isha.png"
+    },
+    {
+      "name": "Chief Ord",
+      "url": "http://www.worldofys.com/ysvi/images/character-ord.png"
+    },
+    {
+      "name": "Geis",
+      "url": "http://www.worldofys.com/ysvi/images/character-geis.png"
+    },
+    {
+      "name": "Dogi",
+      "url": "http://www.worldofys.com/ysvi/images/character-dogi.png"
+    },
+    {
+      "name": "Terra",
+      "url": "http://www.worldofys.com/ysvi/images/character-terra.png"
+    },
+    {
+      "name": "Captain Ladoc",
+      "url": "http://www.worldofys.com/ysvi/images/character-ladoc.png"
+    },
+    {
+      "name": "Commander Ernst",
+      "url": "http://www.worldofys.com/ysvi/images/character-ernst.png"
+    }
+  ],
+  "celceta": [
+    {
+      "name": "",
+      "url": ""
+    }
+  ],
+  "lacrimosa": [
+    {
+      "name": "",
+      "url": ""
+    }
+  ],
+  "monstrum": [
+    {
+      "name": "",
+      "url": ""
+    }
+  ]
+}

@@ -98,20 +98,32 @@ const Line = styled.div`
 
 const ImageList = styled.div`
   width: 95%;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 `;
 
 const ImageFrame = styled.div`
   width: 320px;
   margin: 18px;
-  padding: 0 0 35px;
-  background: #0c0e25;
+  padding: 0 0 24px;
+  background: #3d4170;
+  border-radius: 4px;
   float: left;
   overflow: hidden;
 `;
 
 const ImageTitle = styled.p`
   font-size: 20px;
-  color: #fff;
+  font-style: italic;
+  text-align: center;
+  background: #fff;
+  margin: 18px 24px;
+  padding: 4px 0;
+  opacity: 0.5;
 `;
 
 const ImageDiv = styled.img`
@@ -127,8 +139,8 @@ const LikeBtn = styled.button`
   display: flex;
   justify-content: space-around;
   position: relative;
-  bottom: -20px;
-  right: -265px;
+  bottom: -10px;
+  right: -260px;
 
   &:hover {
     color: #fff;

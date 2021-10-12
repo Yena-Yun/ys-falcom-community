@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 const HomeBg = styled.div`
   width: 70vw;
-  min-width: 600px;
+  min-width: 800px;
   min-height: 75vh;
   margin: auto;
   margin-bottom: 32px;
