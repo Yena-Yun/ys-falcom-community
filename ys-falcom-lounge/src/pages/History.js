@@ -4,38 +4,39 @@ import MaterialTable from 'material-table';
 import Background from '../components/Background';
 import commonData from '../lib/historyCommon.json';
 import logoData from '../lib/historyLogo.json';
+import { forwardRef } from 'react';
+import { ArrowDownward } from '@material-ui/icons';
 
 const History = (props) => {
-  let [data, setData] = useState(logoData);
-
-  console.log(logoData);
-  console.log(logoData.common);
-  console.log(logoData.logo);
-  // const logoUrl = logoData.logo.map((item, id) => item.url);
-  // console.log(logoUrl);
-  // console.log(typeof logoUrl);
-
   const columns = [
     {
       title: 'Logo',
-      field: 'logoImage',
+      field: 'url',
       type: 'image',
-      render: (data) => <img src={data.url} style={{ width: 50 }} alt='ys-series-logo' />,
+      render: (data) => <img src={data.url} style={{ width: '100px' }} alt='ys-series-logo' />,
     },
     {
       title: 'Title',
-      field: 'gameTitle',
+      field: 'name',
     },
     {
       title: 'Description',
-      field: 'gameDetail',
+      field: 'desc',
+      cellStyle: {
+        width: 350,
+        minWidth: 350,
+      },
     },
     {
       title: 'Year',
-      field: 'releasedYear',
+      field: 'year',
       type: 'numeric',
     },
   ];
+
+  const tableIcons = {
+    SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
+  };
 
   return (
     <Background>
@@ -44,21 +45,43 @@ const History = (props) => {
       </HeaderGroup>
       <Line />
       <Container>
-        <FilterBtns>
-          <ChronoFilter>Chronologial Order</ChronoFilter>
-          <ReleasedFilter>Released Order</ReleasedFilter>
-        </FilterBtns>
         <TableDiv>
           <MaterialTable
-            title='게임 진행상 연대기 순'
+            icons={tableIcons}
+            components={{
+              Toolbar: (props) => (
+                <div
+                  style={{
+                    width: '100%',
+                    height: '80px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    fontSize: '30px',
+                    fontWeight: '600',
+                    paddingTop: '30px',
+                  }}
+                >
+                  6 Masterpieces of Ys Series
+                </div>
+              ),
+            }}
+            title={<Header>6 Masterpieces of Ys Series</Header>}
             columns={columns}
             data={logoData}
             options={{
               headerStyle: {
+                margin: 0,
+                textAlign: 'center',
+              },
+              cellStyle: {
+                width: 50,
+                minWidth: 50,
                 textAlign: 'center',
               },
               paging: false,
               search: false,
+              tableLayout: 'auto',
               showEmptyDataSourceMessage: true,
             }}
           />
@@ -94,41 +117,17 @@ const Container = styled.div`
   display: flex;
 `;
 
-const FilterBtns = styled.div`
-  flex: 1;
-  min-height: 60vh;
-  background: lightblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-`;
-
-const ChronoFilter = styled.button`
-  width: 150px;
-  height: 50px;
-  padding: 0 16px;
-  font-size: 16px;
-  text-align: center;
-  background: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-`;
-
-const ReleasedFilter = styled.button`
-  width: 150px;
-  height: 50px;
-  padding: 0 16px;
-  font-size: 16px;
-  text-align: center;
-  background: #fff;
-
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+const Header = styled.div`
+  width: 50vw;
+  height: 100px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: lightyellow;
 `;
 
 const TableDiv = styled.div`
-  padding: 24px;
+  padding: 18px;
   flex: 2;
   background: lightpink;
 `;
