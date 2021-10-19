@@ -12,8 +12,8 @@ const Header = (props) => {
       <Wrapper>
         <LogoImage src={ys_logo} />
         <NavMenu>
-          <NavLink>Walkthrough</NavLink>
-          <NavLink onClick={() => history.push('/tournament')}>Bias Tournament</NavLink>
+          <NavLink onClick={() => history.push('/music')}>🎶 Falcom Record 🎶</NavLink>
+          <NavLink onClick={() => history.push('/worldcup')}>🤼‍♂️ Character Worldcup 🤼‍♀️</NavLink>
         </NavMenu>
       </Wrapper>
     </>

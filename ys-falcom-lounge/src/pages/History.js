@@ -38,6 +38,17 @@ const History = (props) => {
     SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
   };
 
+  const style = {
+    width: '100%',
+    height: '80px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    fontSize: '30px',
+    fontWeight: '600',
+    paddingTop: '30px',
+  };
+
   return (
     <Background>
       <HeaderGroup>
@@ -49,22 +60,7 @@ const History = (props) => {
           <MaterialTable
             icons={tableIcons}
             components={{
-              Toolbar: (props) => (
-                <div
-                  style={{
-                    width: '100%',
-                    height: '80px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    fontSize: '30px',
-                    fontWeight: '600',
-                    paddingTop: '30px',
-                  }}
-                >
-                  6 Masterpieces of Ys Series
-                </div>
-              ),
+              Toolbar: (props) => <div style={style}>6 Masterpieces of Ys Series</div>,
             }}
             title={<Header>6 Masterpieces of Ys Series</Header>}
             columns={columns}

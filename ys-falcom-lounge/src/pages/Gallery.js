@@ -2,12 +2,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
-import { LikeOutlined, LikeFilled } from '@ant-design/icons';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import imageData from '../lib/gallery.json';
 
 const Gallery = (props) => {
   const [selected, setSelected] = useState('');
   const [filteredImage, setFilteredImage] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   const selectList = [
     'Select Series',
@@ -21,8 +22,8 @@ const Gallery = (props) => {
   ];
 
   const handleSelect = (e) => {
-    let select = e.target.value;
-    console.log(select);
+    const select = e.target.value;
+    // console.log(select);
 
     if (select === 'All') setSelected('all');
     else if (select === 'Ys Origin') setSelected('origin');
@@ -31,6 +32,15 @@ const Gallery = (props) => {
     else if (select === 'Ys: Memories of Celceta') setSelected('celceta');
     else if (select === 'Ys VIII: Lacrimosa of Dana') setSelected('lacrimosa');
     else if (select === 'Ys IX: Monstrum Nox') setSelected('monstrum');
+  };
+
+  const handleLiked = (e) => {
+    // e.stopPropagation(); // 이벤트 버블링 해결
+
+    // let idx = filteredImage.findIndex((a) => a.id === id);
+    // console.log(idx);
+
+    isLiked ? setIsLiked(false) : setIsLiked(true);
   };
 
   useEffect(() => {
@@ -60,13 +70,13 @@ const Gallery = (props) => {
       <Line />
       <ImageList>
         {filteredImage.map((image, idx) => {
+          const { name, url } = image;
+
           return (
-            <ImageFrame>
-              <ImageTitle>{image.name}</ImageTitle>
-              <ImageDiv key={idx} src={image.url} alt={image.name} />
-              <LikeBtn>
-                <LikeOutlined />0
-              </LikeBtn>
+            <ImageFrame key={idx}>
+              <ImageTitle>{name}</ImageTitle>
+              <ImageDiv src={url} alt={name} />
+              <LikeBtn onClick={handleLiked}>{isLiked ? <HeartOutlined /> : <HeartFilled />}</LikeBtn>
             </ImageFrame>
           );
         })}

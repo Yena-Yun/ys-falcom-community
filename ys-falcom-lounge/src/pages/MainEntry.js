@@ -10,7 +10,7 @@ const MainEntry = () => {
       <MainHeader>
         <MainTitle>Welcome to Ys-Lounge!</MainTitle>
         <BtnGroup>
-          <MoveBtn onClick={() => history.push('/home')}>라운지로 가기</MoveBtn>
+          <MoveBtn onClick={() => history.push('/home')}>홈으로 가기</MoveBtn>
           <MoveBtn>
             <a href='https://play-ys.com/' target='_blank'>
               이스 공식 홈페이지
