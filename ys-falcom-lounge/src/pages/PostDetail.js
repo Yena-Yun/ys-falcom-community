@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import imageData from '../lib/gallery.json';
@@ -9,9 +10,6 @@ const PostDetail = ({ history, location, match }) => {
   const { id, series } = match.params;
   console.log(id);
   console.log(series);
-
-  const detail = imageData[series];
-  console.log(detail);
 
   // if (!detail) return <div>존재하지 않는 게시물입니다.</div>;
 
@@ -27,7 +25,10 @@ const PostDetail = ({ history, location, match }) => {
   // };
 
   useEffect(() => {
-    const filteredData = detail.filter((a) => a.id === id);
+    const detail = imageData[series];
+    console.log(detail);
+
+    const filteredData = detail.filter((a) => String(a.id) === id);
     console.log(filteredData);
     setData(filteredData);
   }, [id]);
@@ -35,18 +36,18 @@ const PostDetail = ({ history, location, match }) => {
   return (
     <Wrapper>
       <div>
-        {/* {data ? (
+        {data ? (
           <>
             <div>
-              <label>{detail.name}</label>
+              <label>{data.name}</label>
             </div>
             <div>
-              <div>{detail.url}</div>
+              <div>{data.url}</div>
             </div>
           </>
         ) : (
           '해당 게시글을 찾을 수 없습니다.'
-        )} */}
+        )}
         <button onClick={() => history.goBack()}>목록으로 돌아가기</button>
       </div>
     </Wrapper>
