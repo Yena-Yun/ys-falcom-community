@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Background from '../components/Background';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import imageData from '../lib/gallery.json';
+import { Link } from 'react-router-dom';
 
 const Gallery = (props) => {
   const [selected, setSelected] = useState('');
@@ -34,16 +35,20 @@ const Gallery = (props) => {
     else if (select === 'Ys IX: Monstrum Nox') setSelected('monstrum');
   };
 
-  const handleLiked = (e) => {
-    // e.stopPropagation(); // 이벤트 버블링 해결
-
+  const handleLiked = (element) => {
+    console.log(element);
     // let idx = filteredImage.findIndex((a) => a.id === id);
     // console.log(idx);
-
-    isLiked ? setIsLiked(false) : setIsLiked(true);
+    // setIsLiked(!isLiked);
+    // selectPicture(id);
   };
 
+  const selectPicture = (id) => {};
+
   useEffect(() => {
+    // 처음 Gallery에 들어오면 이스8 이미지 보이도록
+    // setFilteredImage(imageData.lacrimosa);
+
     if (selected === 'lacrimosa') {
       setFilteredImage(imageData.lacrimosa);
     } else if (selected === 'chronicles') {
@@ -70,13 +75,22 @@ const Gallery = (props) => {
       <Line />
       <ImageList>
         {filteredImage.map((image, idx) => {
-          const { name, url } = image;
+          const { id, name, url } = image;
 
           return (
             <ImageFrame key={idx}>
               <ImageTitle>{name}</ImageTitle>
-              <ImageDiv src={url} alt={name} />
-              <LikeBtn onClick={handleLiked}>{isLiked ? <HeartOutlined /> : <HeartFilled />}</LikeBtn>
+              <Link to={`/gallery/${selected}/${id}`}>
+                <ImageDiv src={url} alt={name} />
+              </Link>
+              <LikeBtn
+                onClick={(e) => {
+                  setIsLiked(!isLiked);
+                  handleLiked(e.target);
+                }}
+              >
+                {isLiked ? <HeartOutlined pointerEvents='none' /> : <HeartFilled pointerEvents='none' />}
+              </LikeBtn>
             </ImageFrame>
           );
         })}
@@ -139,6 +153,7 @@ const ImageTitle = styled.p`
 const ImageDiv = styled.img`
   max-width: 300px;
   min-width: 300px;
+  cursor: pointer;
 `;
 
 const LikeBtn = styled.button`

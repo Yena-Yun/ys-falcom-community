@@ -10,7 +10,7 @@ const Header = (props) => {
   return (
     <>
       <Wrapper>
-        <LogoImage src={ys_logo} />
+        <LogoImage src={ys_logo} onClick={() => history.push('/home')} />
         <NavMenu>
           <NavLink onClick={() => history.push('/music')}>🎶 Falcom Record 🎶</NavLink>
           <NavLink onClick={() => history.push('/worldcup')}>🤼‍♂️ Character Worldcup 🤼‍♀️</NavLink>
@@ -35,6 +35,7 @@ const LogoImage = styled.img`
   width: 120px;
   height: 35px;
   padding: 20px 0 0 24px;
+  cursor: pointer;
 `;
 
 const NavMenu = styled.nav`
