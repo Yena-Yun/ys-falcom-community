@@ -1,0 +1,19 @@
+	@mixin change-bg {
+
+	background: lightpink;
+
+
+}
+
+.music-item {
+	min-width: 130px;
+	height: 100px;
+	padding: 12px;
+
+	caption {
+		font-size: 18px;
+		margin: 4px 24px 8px;
+	}
+
+	@include change-bg;
+}

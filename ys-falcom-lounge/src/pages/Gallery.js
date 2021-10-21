@@ -43,8 +43,6 @@ const Gallery = (props) => {
     // selectPicture(id);
   };
 
-  const selectPicture = (id) => {};
-
   useEffect(() => {
     // 처음 Gallery에 들어오면 이스8 이미지 보이도록
     // setFilteredImage(imageData.lacrimosa);
