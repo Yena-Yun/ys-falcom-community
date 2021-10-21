@@ -75,6 +75,7 @@ const HoverBg = styled.div`
 const MoveHistory = styled.div`
   width: 400px;
   margin-right: 5%;
+  transition: all 300ms ease-in-out;
 
   img {
     width: 400px;
@@ -82,7 +83,7 @@ const MoveHistory = styled.div`
 
   @media screen and (max-width: 1200px) {
     margin-right: 0;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 `;
 
