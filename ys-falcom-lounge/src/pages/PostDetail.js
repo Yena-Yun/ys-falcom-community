@@ -2,6 +2,7 @@ import { CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import imageData from '../lib/gallery.json';
+import Background from '../components/Background';
 
 const PostDetail = ({ history, location, match }) => {
   const [data, setData] = useState({});
@@ -30,11 +31,17 @@ const PostDetail = ({ history, location, match }) => {
 
     const filteredData = detail.filter((a) => String(a.id) === id);
     console.log(filteredData);
-    setData(filteredData);
+
+    setData(...filteredData);
+    console.log(data);
+
+    console.log(data.id);
+    console.log(data.name);
+    console.log(data.url);
   }, [id]);
 
   return (
-    <Wrapper>
+    <Background>
       <div>
         {data ? (
           <>
@@ -42,7 +49,7 @@ const PostDetail = ({ history, location, match }) => {
               <label>{data.name}</label>
             </div>
             <div>
-              <div>{data.url}</div>
+              <img src={data.url} alt='detail' />
             </div>
           </>
         ) : (
@@ -50,7 +57,7 @@ const PostDetail = ({ history, location, match }) => {
         )}
         <button onClick={() => history.goBack()}>목록으로 돌아가기</button>
       </div>
-    </Wrapper>
+    </Background>
   );
 };
 

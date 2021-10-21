@@ -63,8 +63,8 @@ const HoverBg = styled.div`
   width: 400px;
   height: 300px;
   cursor: pointer;
-  background: rgba(25, 30, 84, 0.4);
-  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
   line-height: 300px;
   text-align: center;
   font-size: 40px;
