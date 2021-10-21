@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
-import Origin_Feena from '../music/Ys Origin - Music_ Feena.mp4';
+import OriginCover from '../images/albumcover/ys-origin-cover.png';
+import Origin_Feena from '../music/Origin - Feena.mp4';
 
 const Music = (props) => {
-  const [active, setActive] = useState(false);
   const [origin, setOrigin] = useState(false);
   const [chronicles, setChronicles] = useState(false);
   const [napishtim, setNapishtim] = useState(false);
@@ -12,23 +12,36 @@ const Music = (props) => {
   const [lacrimosa, setLacrimosa] = useState(false);
   const [monstrum, setMonstrum] = useState(false);
 
+  const setOffAll = () => {
+    setOrigin(false);
+    setChronicles(false);
+    setNapishtim(false);
+    setCelceta(false);
+    setLacrimosa(false);
+    setMonstrum(false);
+  };
+
   const handleTabClick = (e) => {
     let text = e.target.textContent;
 
-    setActive(true);
-
     if (text === 'Origin') {
+      setOffAll();
       setOrigin(true);
     } else if (text === 'Chronicles+') {
+      setOffAll();
       setChronicles(true);
     } else if (text === 'Napishtim') {
-      setChronicles(true);
+      setOffAll();
+      setNapishtim(true);
     } else if (text === 'Celceta') {
-      setChronicles(true);
+      setOffAll();
+      setCelceta(true);
     } else if (text === 'Lacrimosa') {
-      setChronicles(true);
+      setOffAll();
+      setLacrimosa(true);
     } else if (text === 'Monstrum') {
-      setChronicles(true);
+      setOffAll();
+      setMonstrum(true);
     }
   };
 
@@ -57,7 +70,7 @@ const Music = (props) => {
             </MusicItem>
           ) : null}
         </MusicList>
-        <SeriesCover>{origin ? <img src='' alt='' /> : null}</SeriesCover>
+        <SeriesCover>{origin ? <img src={OriginCover} alt='origin-album-cover' /> : null}</SeriesCover>
       </Container>
     </Background>
   );
@@ -109,21 +122,23 @@ const TabDiv = styled.li`
 
 const Container = styled.div`
   display: flex;
+  width: 90%;
+  min-height: 400px;
+  background: lightgreen;
+  padding: 16px;
 `;
 
 const MusicList = styled.div`
   flex: 1;
-  width: 95%;
-  min-height: 400px;
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
+  background: lightseagreen;
+  margin: 16px;
 `;
 
 const MusicItem = styled.div`
-  min-width: 130px;
+  min-width: 150px;
   height: 100px;
   padding: 12px;
+  background: lightcoral;
 
   caption {
     font-size: 18px;
@@ -133,6 +148,12 @@ const MusicItem = styled.div`
 
 const SeriesCover = styled.div`
   flex: 1;
+  width: 150px;
+  background: lightblue;
+
+  img {
+    width: 100%;
+  }
 `;
 
 export default Music;

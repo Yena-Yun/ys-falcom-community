@@ -1,0 +1,92 @@
+{
+  "origin": [
+    {
+      "id": 0,
+      "name": "Feena",
+      "url": ""
+    }
+  ],
+  "chronicles": [
+    {
+      "id": 0,
+      "name": "Water Prison",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPHSroSX33wCc4BOdxBeIHpBSNOoFYtywRkw&usqp=CAU"
+    },
+    {
+      "id": 1,
+      "name": "Feena in the Prison",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjH_gZaVLJI8NhqWOMNYXjxiN-q-k81ID_w&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "name": "Feena and Adol",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvBniiV7444a1rthdXN1fRph4j9V-DQMaxMA&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "name": "Ys developer's Secret",
+      "url": "https://i.imgur.com/uYnXU3z.png"
+    },
+    {
+      "id": 4,
+      "name": "Adolroo in roo's village with roda fruit",
+      "url": "https://moegamer.files.wordpress.com/2016/07/ys-ii-roos.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Veraganda",
+      "url": "https://img.youtube.com/vi/sZs3H9NxqqM/0.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Geraldi",
+      "url": "https://i.ytimg.com/vi/kCTPQ0pIxmE/maxresdefault.jpg"
+    }
+  ],
+  "celceta": [
+    {
+      "id": 0,
+      "name": "Adol in front of a zeolite",
+      "url": "https://www.kyeonggi.com/news/photo/202004/2276429_1060287_2419.png"
+    }
+  ],
+  "lacrimosa": [
+    {
+      "id": 0,
+      "name": "Strong Dana",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHWkUGCayvyJANXRQN49X_738TAXxy1kzBQ&usqp=CAU"
+    },
+    {
+      "id": 1,
+      "name": "Battle",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMIypTcAjhls5pQKT6nhkDw_rWTTMkMVrz1w&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "name": "Dana True Ending",
+      "url": "https://i.pinimg.com/originals/e1/85/2a/e1852ac12d4640859cb1802a6b613938.png"
+    }
+  ],
+  "monstrum": [
+    {
+      "id": 0,
+      "name": "Scene Transition Image",
+      "url": "http://pbs.twimg.com/media/Dvd2hYqU0AARvQe.jpg"
+    },
+    {
+      "id": 1,
+      "name": "First Meeting with Xavier",
+      "url": "https://www.blog.dwgames.net/wp-content/uploads/2021/02/YS9_Xavier-scaled.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Anemona on the Colosseum",
+      "url": "https://www.vgchartz.com/articles_media/images/ys-ix-balduq-1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Six Characters",
+      "url": "https://steamuserimages-a.akamaihd.net/ugc/1706284618676454365/5C0D868EB4BFA929D880F60FD0D959C98715CF85/?imw=1920&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+    }
+  ]
+}
