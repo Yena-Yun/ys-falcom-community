@@ -16,9 +16,26 @@ const Music = (props) => {
   const [crawl, setCrawl] = useState([]);
 
   useEffect(() => {
-    fetch('api/crawl')
-      .then((res) => res.json())
-      .then((data) => setCrawl(data));
+    fetch('api/crawl', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        console.log(res.Response);
+        // console.log(res.url);
+        // res.json();
+        // console.log(res.json());
+      })
+      // .then((data) => {
+      //   setCrawl(data);
+      //   console.log(data);
+      //   console.log(crawl);
+      // });
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
 
   const setOffAll = () => {
@@ -72,7 +89,7 @@ const Music = (props) => {
 
       <Container>
         <MusicList>
-          {crawl.map((music) => {
+          {/* {crawl.map((music) => {
             console.log(music);
 
             return (
@@ -81,7 +98,7 @@ const Music = (props) => {
                 <a href={music.video} />
               </MusicItem>
             );
-          })}
+          })} */}
         </MusicList>
         <SeriesCover>{origin ? <img src={OriginCover} alt='origin-album-cover' /> : null}</SeriesCover>
       </Container>
