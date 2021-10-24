@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
 import OriginCover from '../images/albumcover/ys-origin-cover.png';
@@ -11,6 +12,14 @@ const Music = (props) => {
   const [celceta, setCelceta] = useState(false);
   const [lacrimosa, setLacrimosa] = useState(false);
   const [monstrum, setMonstrum] = useState(false);
+
+  const [crawl, setCrawl] = useState([]);
+
+  useEffect(() => {
+    fetch('api/crawl')
+      .then((res) => res.json())
+      .then((data) => setCrawl(data));
+  }, []);
 
   const setOffAll = () => {
     setOrigin(false);
@@ -63,12 +72,16 @@ const Music = (props) => {
 
       <Container>
         <MusicList>
-          {origin ? (
-            <MusicItem>
-              <caption>Feena</caption>
-              <audio controls src={Origin_Feena} />
-            </MusicItem>
-          ) : null}
+          {crawl.map((music) => {
+            console.log(music);
+
+            return (
+              <MusicItem>
+                <caption>{music.title}</caption>
+                <a href={music.video} />
+              </MusicItem>
+            );
+          })}
         </MusicList>
         <SeriesCover>{origin ? <img src={OriginCover} alt='origin-album-cover' /> : null}</SeriesCover>
       </Container>
