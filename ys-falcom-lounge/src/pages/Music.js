@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import Background from '../components/Background';
 import OriginCover from '../images/albumcover/ys-origin-cover.png';
 import Origin_Feena from '../music/Origin - Feena.mp4';
+import Water_Prison from '../music/Origin - Water Prison.mp4';
+import Beyond_the_Beginning from '../music/Origin - Beyond the Beginning(opening).mp4';
+import Over_Drive from '../music/Origin - Over Drive.mp4';
 
 const Music = (props) => {
   const [origin, setOrigin] = useState(false);
@@ -15,28 +18,7 @@ const Music = (props) => {
 
   const [crawl, setCrawl] = useState([]);
 
-  useEffect(() => {
-    fetch('api/crawl', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        console.log(res.Response);
-        // console.log(res.url);
-        // res.json();
-        // console.log(res.json());
-      })
-      // .then((data) => {
-      //   setCrawl(data);
-      //   console.log(data);
-      //   console.log(crawl);
-      // });
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  // useEffect(() => {}, []);
 
   const setOffAll = () => {
     setOrigin(false);
@@ -89,18 +71,44 @@ const Music = (props) => {
 
       <Container>
         <MusicList>
-          {/* {crawl.map((music) => {
-            console.log(music);
+          {/* <button
+            type='button'
+            className='form-btn'
+            onClick={() => {
+              fetch('api/data').then(async (res) => {
+                try {
+                  const data = await res.json();
+                  console.log('response data?', data);
+                } catch (error) {
+                  console.log('Error happend here!');
+                  console.log(error);
+                }
+              });
+            }}
+          >
+            search
+          </button> */}
 
-            return (
-              <MusicItem>
-                <caption>{music.title}</caption>
-                <a href={music.video} />
-              </MusicItem>
-            );
-          })} */}
+          <MusicItem>
+            <span>Feena</span>
+            <audio controls src={Origin_Feena} />
+          </MusicItem>
+          <MusicItem>
+            <span>Water Prison</span>
+            <audio controls src={Water_Prison} />
+          </MusicItem>
+          <MusicItem>
+            <span>Beyond the Beginning</span>
+            <audio controls src={Beyond_the_Beginning} />
+          </MusicItem>
+          <MusicItem>
+            <span>Overdrive</span>
+            <audio controls src={Over_Drive} />
+          </MusicItem>
         </MusicList>
-        <SeriesCover>{origin ? <img src={OriginCover} alt='origin-album-cover' /> : null}</SeriesCover>
+        <SeriesCover>
+          <img src={OriginCover} alt='origin-album-cover' />
+        </SeriesCover>
       </Container>
     </Background>
   );
@@ -154,35 +162,51 @@ const Container = styled.div`
   display: flex;
   width: 90%;
   min-height: 400px;
-  background: lightgreen;
+  background: #90c4ee;
   padding: 16px;
+  border-radius: 16px;
 `;
 
 const MusicList = styled.div`
   flex: 1;
-  background: lightseagreen;
   margin: 16px;
 `;
 
 const MusicItem = styled.div`
-  min-width: 150px;
+  max-width: 400px;
   height: 100px;
-  padding: 12px;
-  background: lightcoral;
+  padding: 6px 8px 4px;
+  margin-bottom: 6px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
 
-  caption {
+  span {
+    display: block;
+    width: 200px;
     font-size: 18px;
-    margin: 4px 24px 8px;
+    padding: 4px 24px 6px;
+    text-align: left;
   }
 `;
 
 const SeriesCover = styled.div`
   flex: 1;
-  width: 150px;
-  background: lightblue;
+  width: 400px;
+  height: 420px;
+  margin: 16px;
+  margin-left: 0;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
 
   img {
-    width: 100%;
+    width: 400px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+      rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   }
 `;
 

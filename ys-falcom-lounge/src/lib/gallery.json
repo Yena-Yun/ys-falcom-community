@@ -2,7 +2,7 @@
   "origin": [
     {
       "id": 0,
-      "name": "battle",
+      "name": "Darm Tower",
       "url": "https://gamesfromtheblackhole.files.wordpress.com/2020/11/ys-origin-lead-image.jpg?w=1280"
     }
   ],
@@ -43,10 +43,17 @@
       "url": "https://i.ytimg.com/vi/kCTPQ0pIxmE/maxresdefault.jpg"
     }
   ],
+  "napishtim": [
+    {
+      "id": 0,
+      "name": "Geis",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF6-LIOk7pHECSJuMohAK_74IMppaVxOkvtA&usqp=CAU"
+    }
+  ],
   "celceta": [
     {
       "id": 0,
-      "name": "Adol in front of a zeolite",
+      "name": "Adol before a zeolite",
       "url": "https://www.kyeonggi.com/news/photo/202004/2276429_1060287_2419.png"
     }
   ],

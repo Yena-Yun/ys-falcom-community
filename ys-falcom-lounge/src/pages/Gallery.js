@@ -35,8 +35,9 @@ const Gallery = (props) => {
     else if (select === 'Ys IX: Monstrum Nox') setSelected('monstrum');
   };
 
-  const handleLiked = (element) => {
-    console.log(element);
+  const handleLiked = (series, id) => {
+    console.log(series);
+    console.log(id);
     // let idx = filteredImage.findIndex((a) => a.id === id);
     // console.log(idx);
     // setIsLiked(!isLiked);
@@ -47,7 +48,15 @@ const Gallery = (props) => {
     // 처음 Gallery에 들어오면 이스8 이미지 보이도록
     // setFilteredImage(imageData.lacrimosa);
 
-    if (selected === 'lacrimosa') {
+    if (selected === 'origin') {
+      setFilteredImage(imageData.origin);
+    } else if (selected === 'chronicles') {
+      setFilteredImage(imageData.chronicles);
+    } else if (selected === 'napishtim') {
+      setFilteredImage(imageData.napishtim);
+    } else if (selected === 'celceta') {
+      setFilteredImage(imageData.celceta);
+    } else if (selected === 'lacrimosa') {
       setFilteredImage(imageData.lacrimosa);
     } else if (selected === 'chronicles') {
       setFilteredImage(imageData.chronicles);
@@ -83,8 +92,7 @@ const Gallery = (props) => {
               </Link>
               <LikeBtn
                 onClick={(e) => {
-                  setIsLiked(!isLiked);
-                  handleLiked(e.target);
+                  handleLiked(selected, idx);
                 }}
               >
                 {isLiked ? <HeartOutlined pointerEvents='none' /> : <HeartFilled pointerEvents='none' />}

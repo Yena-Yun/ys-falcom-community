@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   overflow-y: scroll;
   box-sizing: border-box;
-  /* cursor: url('./images/tarf.png'), auto !important; */
+  cursor: url('./images/tarf.png'), auto !important;
 }
 
 a {

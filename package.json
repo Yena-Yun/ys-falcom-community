@@ -1,0 +1,28 @@
+{
+  "name": "ys-community",
+  "version": "1.0.0",
+  "description": "파이어베이스로 배포 <br/>\r 링크: https://ys-falcom-lounge.web.app/",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm start",
+    "dev:client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yena-Yun/ys-falcom-community.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yena-Yun/ys-falcom-community/issues"
+  },
+  "homepage": "https://github.com/Yena-Yun/ys-falcom-community#readme",
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
