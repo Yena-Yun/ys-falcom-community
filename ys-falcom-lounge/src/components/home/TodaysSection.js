@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TitleText from '../TitleText';
-import Roos from '../../images/Art_roo.jpg';
+import Roos from '../../lib/images/home/Art_roo.jpg';
 
 const TodaysSection = (props) => {
   return (
@@ -24,16 +24,16 @@ const TodaysSection = (props) => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 380px;
+  height: 410px;
   background: #f0f0f0;
-  padding: 24px 48px;
+  padding: 28px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const TodaysBg = styled.div`
-  width: 90%;
+  width: 80%;
   background: rgba(255, 255, 255, 0.9);
   height: 95%;
   display: flex;

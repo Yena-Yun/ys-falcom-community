@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import WhiteCat from '../images/etc/whitecat.png';
+import WhiteCat from '../lib/images/error/whitecat.png';
 import { useHistory } from 'react-router-dom';
 
 const PageNotFound = (props) => {

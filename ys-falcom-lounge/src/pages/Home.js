@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import goddesses from '../images/ys-goddesses.jpg';
+import goddesses from '../lib/images/ys-goddesses.jpg';
 import Background from '../components/Background';
 import MainSection from '../components/home/MainSection';
 import TodaysSection from '../components/home/TodaysSection';
 import RouterSection from '../components/home/RouterSection';
 import PlayerSection from '../components/home/PlayerSection';
+import Footer from '../components/Footer';
 
 const Home = (props) => {
   const history = useHistory();
@@ -20,6 +21,7 @@ const Home = (props) => {
       <TodaysSection />
       <RouterSection />
       <PlayerSection />
+      <Footer />
 
       {/* <MoveGroup>
         <MoveHistory onClick={() => history.push('/history')} onMouseOver={() => setIsHistory(true)} onMouseOut={() => setIsHistory(false)}>

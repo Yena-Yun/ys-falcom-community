@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Background from '../components/Background';
-import OriginCover from '../images/albumcover/ys-origin-cover.png';
-import Origin_Feena from '../music/Origin - Feena.mp4';
-import Water_Prison from '../music/Origin - Water Prison.mp4';
-import Beyond_the_Beginning from '../music/Origin - Beyond the Beginning(opening).mp4';
-import Over_Drive from '../music/Origin - Over Drive.mp4';
+import OriginCover from '../lib/images/albumcover/ys-origin-cover.png';
+import Origin_Feena from '../lib/music/Origin - Feena.mp4';
+import Water_Prison from '../lib/music/Origin - Water Prison.mp4';
+import Beyond_the_Beginning from '../lib/music/Origin - Beyond the Beginning(opening).mp4';
+import Over_Drive from '../lib/music/Origin - Over Drive.mp4';
 
 const Music = (props) => {
   const [origin, setOrigin] = useState(false);

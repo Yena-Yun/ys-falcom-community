@@ -5,13 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  background: url('./images/ys2-background.jpg');
-  background-size: cover;
-  min-height: 100vh;
-  overflow-y: scroll;
+  width: 90vw;
+  background: #000;
+  min-height: 90vh;
   box-sizing: border-box;
-  cursor: url('./images/tarf.png'), auto !important;
+  cursor: url('./lib/images/tarf-cursor.png'), auto !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 0, 94);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(106, 0, 133);
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a1a1a;
 }
 
 a {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ys_logo from '../images/header_logo.png';
+import ys_logo from '../lib/images/header/header_logo.png';
 import { useHistory } from 'react-router-dom';
 // import Burger from './Burger';
 
@@ -8,15 +8,13 @@ const Header = (props) => {
   const history = useHistory();
 
   return (
-    <>
-      <Wrapper>
-        <LogoImage src={ys_logo} onClick={() => history.push('/home')} />
-        <NavMenu>
-          <NavLink onClick={() => history.push('/music')}>🎶 Falcom Record 🎶</NavLink>
-          <NavLink onClick={() => history.push('/worldcup')}>🤼‍♂️ Character Worldcup 🤼‍♀️</NavLink>
-        </NavMenu>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <LogoImage src={ys_logo} onClick={() => history.push('/home')} />
+      <NavMenu>
+        <NavLink onClick={() => history.push('/music')}>🎶 Falcom Record 🎶</NavLink>
+        <NavLink onClick={() => history.push('/worldcup')}>🤼‍♂️ Character Worldcup 🤼‍♀️</NavLink>
+      </NavMenu>
+    </Wrapper>
   );
 };
 

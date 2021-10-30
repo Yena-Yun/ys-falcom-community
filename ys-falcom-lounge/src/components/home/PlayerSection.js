@@ -8,7 +8,7 @@ const PlayerSection = (props) => {
   return (
     <Wrapper>
       <PlayerDiv>
-        <Title>The Best Openings Ever!</Title>
+        {/* <Title>The Best Openings Ever!</Title> */}
         <Grid>
           <TextDiv>
             <TextTitle>Origin Opening</TextTitle>
@@ -32,7 +32,6 @@ const PlayerSection = (props) => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 700px;
   background: lightpink;
 `;
 
@@ -47,9 +46,9 @@ const PlayerDiv = styled.div`
 const Title = styled.p`
   min-width: 390px;
   padding: 16px 0;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 600;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   color: #fff;
   text-align: left;
 `;
@@ -64,7 +63,7 @@ const Grid = styled.div`
 const TextDiv = styled.div`
   flex: 1;
   /* width: 550px; */
-  margin: 24px;
+  margin: 16px;
   min-width: 400px;
   height: 355.55px;
   background: rgb(173, 216, 230);
@@ -72,19 +71,20 @@ const TextDiv = styled.div`
 
 const TextTitle = styled.p`
   font-size: 24px;
-  text-align: left;
+  font-weight: 600;
+  text-align: center;
 `;
 
 const VideoDiv = styled.div`
   flex: 1;
-  margin: 24px;
+  margin: 16px;
 
   /* width: 90%; */
   /* background: lightsalmon; */
   height: 337.5px;
 
   video {
-    width: 600px;
+    width: 550px;
     /* height: 100%; */
   }
 `;

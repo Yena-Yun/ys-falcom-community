@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainBg from '../../images/ys9-adol-main.jpg';
+import MainBg from '../../lib/images/home/ys9-adol-main.jpg';
 
 const MainSection = (props) => {
   return (

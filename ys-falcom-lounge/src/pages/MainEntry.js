@@ -2,11 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import EntryBg from '../lib/images/main/ys2-background.jpg';
 
 const MainEntry = () => {
   const history = useHistory();
   return (
     <Wrapper>
+      <Background src={EntryBg} alt='main-background' />
       <MainHeader>
         <MainTitle>Welcome to Ys-Lounge!</MainTitle>
         <BtnGroup>
@@ -24,17 +26,35 @@ const MainEntry = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  margin-top: 180px;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+`;
+
+const Background = styled.img`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 `;
 
 const MainHeader = styled.div`
+  position: absolute;
+  top: 180px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.5);
-  padding: 24px 0 70px;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const MainTitle = styled.p`
   font-size: 40px;
   font-weight: 700;
+  margin-bottom: 40px;
 `;
 
 const BtnGroup = styled.div`
