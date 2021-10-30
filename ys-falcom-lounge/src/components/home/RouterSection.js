@@ -37,7 +37,7 @@ const CircleRouter = styled.div`
   border-radius: 50%;
   border: 3px solid #aaa;
   cursor: pointer;
-
+  text-align: center;
   font-size: 36px;
   font-weight: 600;
   font-style: italic;

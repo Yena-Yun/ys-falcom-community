@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import ReactHowler from 'react-howler';
 import styled from 'styled-components';
+import { SwapOutlined, CaretRightOutlined, PauseOutlined } from '@ant-design/icons';
 import ys_logo from '../lib/images/header/header_logo.png';
 import { useHistory } from 'react-router-dom';
 import Feena from '../lib/music/Origin - Feena.mp4';
-import OverDrive from '../lib/music/Origin - Over Drive.mp4';
+import WaterPrison from '../lib/music/Origin - Water Prison.mp4';
 // import Burger from './Burger';
 
 const Header = (props) => {
   const history = useHistory();
-  const [sources, setSources] = useState([Feena, OverDrive]);
+  const [sources, setSources] = useState([Feena, WaterPrison]);
   const [currentSrcIndex, setCurrentSrcIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -34,12 +35,15 @@ const Header = (props) => {
       <HowlerPlayer>
         <ReactHowler playing={playing} src={sources[currentSrcIndex]} />
         <Button className='full' onClick={handleSwap}>
-          Swap Source
+          <SwapOutlined />
         </Button>
-        <br />
-        <Button onClick={handlePlay}>Play</Button>
-        <Button onClick={handlePause}>Pause</Button>
-        <p>{sources[currentSrcIndex][0] + '/mp4'}</p>
+        <Button onClick={handlePlay}>
+          <CaretRightOutlined />
+        </Button>
+        <Button onClick={handlePause}>
+          <PauseOutlined />
+        </Button>
+        {/* <p>{sources[currentSrcIndex][0] + '/mp4'}</p> */}
       </HowlerPlayer>
     </Wrapper>
   );
@@ -50,39 +54,55 @@ const Wrapper = styled.div`
   top: 0;
   z-index: 200;
   width: 100vw;
-  height: 10vh;
+  height: 11vh;
   background: rgba(0, 0, 0, 0.7);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const LogoImage = styled.img`
-  width: 120px;
-  height: 35px;
-  padding: 20px 0 0 24px;
+  width: 125px;
+  height: 50px;
   cursor: pointer;
+  padding: 4px;
+  box-sizing: border-box;
+  margin-left: 60px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    border: 1px solid #9c9c9c;
+  }
 `;
 
 const HowlerPlayer = styled.div`
-  width: 400px;
+  display: flex;
+  margin-right: 60px;
 `;
 
 const Button = styled.button`
-  padding: 10px 23px;
+  width: 70px;
+  padding: 8px 0;
   border-radius: 5px;
-  border: 2px solid #69ba5e;
+  border: 1px solid #69ba5e;
   background-color: transparent;
   color: #69ba5e;
-  font-size: 1.375em;
-  text-decoration: none;
+  font-size: 18px;
   text-align: center;
   display: inline-block;
+  margin-right: 10px;
   transition: background-color 0.15s ease-in-out, border 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
     color: #fff;
     background-color: #58a34d;
-    border: 2px solid #58a34d;
+    border: 1px solid #58a34d;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 `;
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import TitleText from '../TitleText';
 import Roos from '../../lib/images/home/Art_roo.jpg';
 
 const TodaysSection = (props) => {
@@ -11,7 +10,7 @@ const TodaysSection = (props) => {
           <img src={Roos} alt="today's-play" />
         </TodayLeft>
         <TodayRight>
-          <TitleText>Today's PICK</TitleText>
+          <TodayTitle>Today's PICK</TodayTitle>
           <TodayBtnGroup>
             <TodayBtn>Fortune Cookie</TodayBtn>
             <TodayBtn>Ladder Climb</TodayBtn>
@@ -55,6 +54,17 @@ const TodayRight = styled.div`
   flex-direction: column;
   align-items: center;
   /* background: lightslategrey; */
+`;
+
+const TodayTitle = styled.p`
+  width: 100%;
+  min-width: 390px;
+  padding: 16px 0;
+  background: lightgoldenrodyellow;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 48px;
 `;
 
 const TodayBtnGroup = styled.div`
