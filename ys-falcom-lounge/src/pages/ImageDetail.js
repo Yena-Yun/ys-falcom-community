@@ -34,7 +34,7 @@ const ImageDetail = ({ history, location, match }) => {
           '해당 게시글을 찾을 수 없습니다.'
         )}
 
-        <button onClick={() => history.goBack()}>목록으로 돌아가기</button>
+        <GoBackBtn onClick={() => history.goBack()}>뒤로 가기</GoBackBtn>
 
         <CommentContainer>
           <CommentInput placeholder='댓글을 입력하세요...' autoFocus />
@@ -51,11 +51,12 @@ const Grid = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const ImageContainer = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  padding: 24px;
   background: lightgrey;
   display: flex;
   flex-direction: column;
@@ -66,15 +67,18 @@ const ImageContainer = styled.div`
 const Title = styled.span`
   display: block;
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
   width: 100%;
   height: 40px;
+  line-height: 40px;
   padding: 4px 0;
   background: lightcyan;
 `;
 
 const ImageDiv = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  padding: 24px 0;
   background: lightyellow;
 
   img {
@@ -82,31 +86,41 @@ const ImageDiv = styled.div`
   }
 `;
 
+const GoBackBtn = styled.button`
+  position: absolute;
+  top: 20px;
+  left: -90px;
+  background: lightgreen;
+  width: 100px;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: 500;
+`;
+
 const CommentContainer = styled.div`
-  width: 500px;
-  min-height: 500px;
+  width: 90%;
+  min-height: 400px;
   overflow-y: scroll;
   padding: 24px;
-  background: #fff;
+  background: lightsteelblue;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const CommentInput = styled.input`
-  width: 100%;
+  width: 90%;
   font-size: 18px;
   padding: 8px 14px;
   border-radius: 4px;
   border: 1px solid lightgrey;
-  margin: 0 24px;
   margin-bottom: 12px;
 `;
 
 const CommentList = styled.div`
-  width: 400px;
+  width: 90%;
   min-height: 450px;
-  background: lightsteelblue;
+  background: #fff;
   padding: 12px;
 `;
 
