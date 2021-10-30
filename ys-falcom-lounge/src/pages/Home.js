@@ -16,21 +16,30 @@ const Home = (props) => {
     <Background>
       <MainSection>
         <MainTextDiv>
-          <Title>34-year Anniversary!</Title>
+          <Title>34-year Anniversary</Title>
           <Desc>
             Action role-playing game developed by Nihon Falcom. <br /> First one released in <span>1987</span>.
           </Desc>
         </MainTextDiv>
-
         <MainBgDiv>
           <img src={MainBg} alt='main-background' />
         </MainBgDiv>
-
-        {/* <div>
-          <button>Fortune Cookies</button>
-          <button>Ladder Climb</button>
-        </div> */}
       </MainSection>
+
+      <TodaysSection>
+        <TodaysBg>
+          <TodayLeft>
+            <img src={roos} alt="today's-play" />
+          </TodayLeft>
+          <TodayRight>
+            <TodayText>Let's play with us!</TodayText>
+            <TodayBtnGroup>
+              <TodayBtn>Fortune Cookie</TodayBtn>
+              <TodayBtn>Ladder Climb</TodayBtn>
+            </TodayBtnGroup>
+          </TodayRight>
+        </TodaysBg>
+      </TodaysSection>
 
       <RouterSection>
         <MenuCircle>History</MenuCircle>
@@ -64,21 +73,89 @@ const Home = (props) => {
   );
 };
 
-const MainSection = styled.div`
+const TodaysSection = styled.div`
   width: 100vw;
-  height: 400px;
+  height: 420px;
+  background: #f0f0f0;
+  padding: 24px 48px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* background: #181818; */
+`;
+
+const TodaysBg = styled.div`
+  width: 95%;
+  background: rgba(255, 255, 255, 0.9);
+  height: 95%;
+  display: flex;
+`;
+
+const TodayLeft = styled.div`
+  img {
+    height: 100%;
+  }
+`;
+
+const TodayRight = styled.div`
+  width: 100%;
+  min-width: 500px;
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* background: lightslategrey; */
+`;
+
+const TodayText = styled.p`
+  width: 100%;
+  min-width: 390px;
+  padding: 16px 0;
+  background: lightgoldenrodyellow;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 48px;
+`;
+
+const TodayBtnGroup = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background: lightcoral; */
+`;
+
+const TodayBtn = styled.button`
+  width: 250px;
+  padding: 16px 0;
+  font-size: 24px;
+  background: #e4d447;
+  margin-right: 24px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+const MainSection = styled.div`
+  z-index: 2;
+  width: 100vw;
+  height: 420px;
+  display: flex;
+  align-items: flex-start;
+  background: #1a1a1a;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 `;
 
 const MainTextDiv = styled.div`
-  flex: 4;
+  flex: 1.1;
   min-width: 400px;
   /* max-width: 600px; */
   height: 100%;
   padding: 16px 36px;
-  background: #1a1a1a;
+  /* background: #1a1a1a; */
   color: #e9e9e9;
   display: flex;
   flex-direction: column;
@@ -95,7 +172,7 @@ const MainTextDiv = styled.div`
 
 const Title = styled.div`
   width: 70%;
-  background: lightcoral;
+  /* background: lightcoral; */
   padding: 24px 32px;
   margin-top: 20px;
   font-size: 50px;
@@ -108,7 +185,7 @@ const Desc = styled.div`
   padding: 24px 32px;
 
   font-size: 20px;
-  background: lightsteelblue;
+  /* background: lightsteelblue; */
   text-align: left;
 
   span {
@@ -118,11 +195,13 @@ const Desc = styled.div`
 `;
 
 const MainBgDiv = styled.div`
-  /* flex: 1; */
+  flex: 1;
   /* min-width: 100%; */
   display: flex;
+  align-items: flex-end;
   white-space: nowrap;
   overflow: hidden;
+  height: 100%;
 
   /* box-shadow: 28px 28px 28px 28px #181818 inset; */
   img {

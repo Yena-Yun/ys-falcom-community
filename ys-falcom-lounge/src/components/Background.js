@@ -14,6 +14,7 @@ const Background = ({ children }) => {
 };
 
 const Wrapper = styled.div`
+  /* margin-top: 20px; */
   width: 91vw;
   /* padding: 32px 60px; */
   background: rgba(255, 255, 255, 0.3);

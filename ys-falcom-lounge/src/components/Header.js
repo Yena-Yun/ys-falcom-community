@@ -23,9 +23,9 @@ const Header = (props) => {
 const Wrapper = styled.div`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 200;
   width: 100vw;
-  height: 11vh;
+  height: 10vh;
   background: rgba(0, 0, 0, 0.7);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
