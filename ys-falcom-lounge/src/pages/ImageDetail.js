@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import imageData from '../lib/gallery.json';
-import Background from '../components/Background';
 
 const ImageDetail = ({ history, location, match }) => {
   const [data, setData] = useState({});
@@ -19,7 +18,7 @@ const ImageDetail = ({ history, location, match }) => {
   }, [id]);
 
   return (
-    <Background>
+    <>
       <Grid>
         {data ? (
           <>
@@ -43,7 +42,7 @@ const ImageDetail = ({ history, location, match }) => {
           </CommentList>
         </CommentContainer>
       </Grid>
-    </Background>
+    </>
   );
 };
 

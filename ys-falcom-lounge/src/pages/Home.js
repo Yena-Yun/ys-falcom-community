@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import goddesses from '../lib/images/ys-goddesses.jpg';
-import Background from '../components/Background';
 import MainSection from '../components/home/MainSection';
 import TodaysSection from '../components/home/TodaysSection';
 import RouterSection from '../components/home/RouterSection';
@@ -16,7 +15,7 @@ const Home = (props) => {
   const [isTournament, setIsTournament] = useState(false);
 
   return (
-    <Background>
+    <>
       <MainSection />
       <TodaysSection />
       <RouterSection />
@@ -31,7 +30,7 @@ const Home = (props) => {
           {isGallery ? <HoverBg>Gallery</HoverBg> : <img src={roos} alt='move to gallery' />}
         </MoveGallery>
       </MoveGroup> */}
-    </Background>
+    </>
   );
 };
 

@@ -4,15 +4,13 @@ import styled from 'styled-components';
 const Footer = (props) => {
   return (
     <Wrapper>
-      {/* <FooterText> */}
       <LeftColumn>
-        <p>© 2021 Cheryl Yun. All rights reserved.</p>
+        <p>© 2021 Cheryl Yun - All rights reserved.</p>
       </LeftColumn>
       <RightColumn>
-        <Button>Terms</Button>
-        <Button>Privacy</Button>
+        <RightBtn>Terms</RightBtn>
+        <RightBtn>Privacy</RightBtn>
       </RightColumn>
-      {/* </FooterText> */}
     </Wrapper>
   );
 };
@@ -20,7 +18,7 @@ const Footer = (props) => {
 const Wrapper = styled.div`
   background: #1a1a1a;
   width: 100vw;
-  height: 8vh;
+  height: 6vh;
   padding: 8px 0;
   display: flex;
   margin-bottom: -28px;
@@ -29,12 +27,9 @@ const Wrapper = styled.div`
   border-top: 2px solid #000;
 `;
 
-const FooterText = styled.div``;
-
 const LeftColumn = styled.div`
-  /* flex: 2; */
-  font-size: 16px;
-  color: #e9e9e9;
+  font-size: 14px;
+  color: #d3d3d3;
   padding: 0 36px;
 `;
 
@@ -45,9 +40,9 @@ const RightColumn = styled.div`
   justify-content: center;
 `;
 
-const Button = styled.button`
-  font-size: 16px;
-  color: #e9e9e9;
+const RightBtn = styled.button`
+  font-size: 14px;
+  color: #d3d3d3;
   margin-right: 16px;
 
   &:last-child {

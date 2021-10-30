@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import MaterialTable from 'material-table';
-import Background from '../components/Background';
 import commonData from '../lib/historyCommon.json';
 import logoData from '../lib/historyLogo.json';
 import { forwardRef } from 'react';
@@ -50,7 +49,7 @@ const History = (props) => {
   };
 
   return (
-    <Background>
+    <>
       <HeaderGroup>
         <Title>History</Title>
       </HeaderGroup>
@@ -83,7 +82,7 @@ const History = (props) => {
           />
         </TableDiv>
       </Container>
-    </Background>
+    </>
   );
 };
 

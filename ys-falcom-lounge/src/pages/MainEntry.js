@@ -6,6 +6,7 @@ import EntryBg from '../lib/images/main/ys2-background.jpg';
 
 const MainEntry = () => {
   const history = useHistory();
+
   return (
     <Wrapper>
       <Background src={EntryBg} alt='main-background' />

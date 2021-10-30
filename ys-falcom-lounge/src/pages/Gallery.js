@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
-import Background from '../components/Background';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import imageData from '../lib/gallery.json';
 import { Link } from 'react-router-dom';
@@ -66,7 +65,7 @@ const Gallery = (props) => {
   }, [selected]);
 
   return (
-    <Background>
+    <>
       <HeaderGroup>
         <Title>Gallery</Title>
         <Filter onChange={handleSelect} value={selected}>
@@ -101,7 +100,7 @@ const Gallery = (props) => {
           );
         })}
       </ImageList>
-    </Background>
+    </>
   );
 };
 

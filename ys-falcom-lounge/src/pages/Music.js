@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Background from '../components/Background';
 import OriginCover from '../lib/images/albumcover/ys-origin-cover.png';
 import Origin_Feena from '../lib/music/Origin - Feena.mp4';
 import Water_Prison from '../lib/music/Origin - Water Prison.mp4';
@@ -54,7 +53,7 @@ const Music = (props) => {
   };
 
   return (
-    <Background>
+    <>
       <HeaderGroup>
         <Title>Falcom Record</Title>
       </HeaderGroup>
@@ -110,7 +109,7 @@ const Music = (props) => {
           <img src={OriginCover} alt='origin-album-cover' />
         </SeriesCover>
       </Container>
-    </Background>
+    </>
   );
 };
 

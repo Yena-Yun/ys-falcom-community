@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Background from '../components/Background';
 import Tab from '../components/Tab';
 
 const Tournament = (props) => {
@@ -25,7 +24,7 @@ const Tournament = (props) => {
   };
 
   return (
-    <Background>
+    <>
       <HeaderGroup>
         <Title>Bias Tournament</Title>
       </HeaderGroup>
@@ -66,7 +65,7 @@ const Tournament = (props) => {
           <p>이스 몬스트룸 캐릭터</p>
         </TabContent> */}
       </Container>
-    </Background>
+    </>
   );
 };
 
