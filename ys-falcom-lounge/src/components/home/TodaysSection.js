@@ -41,7 +41,8 @@ const TodaysBg = styled.div`
 
 const TodayLeft = styled.div`
   img {
-    height: 100%;
+    width: 442.61px;
+    height: 389.5px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 10px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 `;

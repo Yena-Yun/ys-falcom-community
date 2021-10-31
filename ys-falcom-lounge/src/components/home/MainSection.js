@@ -6,9 +6,10 @@ const MainSection = (props) => {
   return (
     <Wrapper>
       <MainTextDiv>
-        <Title>34-year Anniversary</Title>
+        <Title>34-year Anniversary!</Title>
         <Desc>
-          Action role-playing game developed by Nihon Falcom. <br /> First one released in <span>1987</span>.
+          Ys is an action role-playing game series developed by Nihon Falcom. The first series was released in <strong>1987</strong>, and
+          the latest one, <em>Monstrum Nox</em>, released in <strong>2019</strong>. We are happily waiting for Adol's next adventure!
         </Desc>
       </MainTextDiv>
       <MainBgDiv>
@@ -21,78 +22,50 @@ const MainSection = (props) => {
 const Wrapper = styled.div`
   z-index: 2;
   width: 100vw;
-  height: 450px;
+  height: 500px;
   display: flex;
   background: #1a1a1a;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 40px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 `;
 
 const MainTextDiv = styled.div`
-  flex: 1;
-  min-width: 400px;
-  /* max-width: 600px; */
-  height: 100%;
-  padding: 16px 36px;
-  /* background: #1a1a1a; */
+  flex: 0.92;
+  min-width: 390px;
+  padding: 0 40px;
+  padding-top: 80px;
   color: #e9e9e9;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* &::after {
-    z-index: 10;
-    background: linear-gradient(to right, #131313 20%, rgba(0, 0, 0, 0.5) 80%);
-    height: 100%;
-    width: 50px;
-    content: '';
-  } */
+  text-align: left;
 `;
 
 const Title = styled.div`
-  width: 70%;
-  /* background: lightcoral; */
-  padding: 24px 32px;
-  margin-top: 20px;
+  width: 85%;
   font-size: 50px;
   font-weight: 700;
-  text-align: left;
+  margin-bottom: 36px;
 `;
 
 const Desc = styled.div`
-  width: 70%;
-  padding: 24px 32px;
-
+  width: 85%;
   font-size: 20px;
-  /* background: lightsteelblue; */
-  text-align: left;
-
-  span {
-    font-style: italic;
-    font-weight: 600;
-  }
+  line-height: 1.7;
 `;
 
 const MainBgDiv = styled.div`
-  flex: 1.1;
-  /* min-width: 100%; */
+  flex: 1.08;
+
   display: flex;
   align-items: flex-end;
   white-space: nowrap;
   overflow: hidden;
   height: 100%;
 
-  /* box-shadow: 28px 28px 28px 28px #181818 inset; */
   img {
-    height: 400px;
+    height: 480px;
+    min-width: 854px;
   }
-
-  /* img::before {
-    z-index: 1;
-    background: linear-gradient(to right, #131313 90%, #131313 10%);
-    height: 100%;
-    width: 300px;
-    content: '';
-  } */
 `;
 
 export default MainSection;

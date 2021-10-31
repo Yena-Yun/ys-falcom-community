@@ -5,12 +5,12 @@ import { SwapOutlined, CaretRightOutlined, PauseOutlined } from '@ant-design/ico
 import ys_logo from '../lib/images/header/header_logo.png';
 import { useHistory } from 'react-router-dom';
 import Feena from '../lib/music/Origin - Feena.mp4';
-import WaterPrison from '../lib/music/Origin - Water Prison.mp4';
+import DriftingVillage from '../lib/music/Lacrimosa - Drifting Village.mp3';
 // import Burger from './Burger';
 
 const Header = (props) => {
   const history = useHistory();
-  const [sources, setSources] = useState([Feena, WaterPrison]);
+  const [sources, setSources] = useState([Feena, DriftingVillage]);
   const [currentSrcIndex, setCurrentSrcIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -30,7 +30,7 @@ const Header = (props) => {
 
   return (
     <Wrapper>
-      <LogoImage src={ys_logo} onClick={() => history.push('/home')} />
+      <LogoImage src={ys_logo} alt='logo' onClick={() => history.push('/home')} />
 
       <HowlerPlayer>
         <ReactHowler playing={playing} src={sources[currentSrcIndex]} />
