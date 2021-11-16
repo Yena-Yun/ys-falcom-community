@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Background from './components/Background';
 import MainEntry from './pages/MainEntry';
 import PageNotFound from './pages/PageNotFound';
@@ -15,19 +15,19 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <Route path='/' exact component={MainEntry} />
+        <Route path='/' exact element={<MainEntry />} />
 
         <Background>
-          <Switch>
-            <Route path='/home' component={Home} />
-            <Route path='/history' component={History} />
-            <Route path='/gallery' exact component={Gallery} />
-            <Route path='/gallery/:selected/:id' component={ImageDetail} />
-            <Route path='/worldcup' component={Tournament} />
-            <Route path='/music' component={Music} />
+          <Routes>
+            <Route path='/home' element={<Home />} />
+            <Route path='/history' element={<History />} />
+            <Route path='/gallery' exact element={<Gallery />} />
+            <Route path='/gallery/:selected/:id' element={<ImageDetail />} />
+            <Route path='/worldcup' element={<Tournament />} />
+            <Route path='/music' element={<Music />} />
             {/* 어떠한 URL로도 이동할 수 없을 때 띄울 에러페이지 */}
-            <Route component={PageNotFound} />
-          </Switch>
+            <Route element={<PageNotFound />} />
+          </Routes>
         </Background>
       </Suspense>
     </>

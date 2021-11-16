@@ -32,7 +32,6 @@ const Tournament = (props) => {
         <TabList onClick={handleTabClick}>
           <TabDiv>Origin</TabDiv>
           <TabDiv>Chronicles+</TabDiv>
-          <TabDiv>Napishtim</TabDiv>
           <TabDiv>Celceta</TabDiv>
           <TabDiv>Lacrimosa</TabDiv>
           <TabDiv>Monstrum</TabDiv>
@@ -51,9 +50,6 @@ const Tournament = (props) => {
         </TabContent>
         {/* <TabContent>
           <p>이스 크로니클스 캐릭터</p>
-        </TabContent>
-        <TabContent>
-          <p>이스 나피쉬팀 캐릭터</p>
         </TabContent>
         <TabContent>
           <p>이스 셀세타 캐릭터</p>
