@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
-const RouterSection = (props) => {
+const ActivitySection = () => {
+  const history = useHistory();
+
   return (
     <Wrapper>
       <CircleDiv>
         <CircleRouter>History</CircleRouter>
         <CircleRouter>Gallery</CircleRouter>
-        <CircleRouter>Tournament</CircleRouter>
+        <CircleRouter onClick={() => history.push('/tournament')}>Tournament</CircleRouter>
       </CircleDiv>
     </Wrapper>
   );
@@ -45,4 +48,4 @@ const CircleRouter = styled.div`
   color: #1a1a1a;
 `;
 
-export default RouterSection;
+export default ActivitySection;

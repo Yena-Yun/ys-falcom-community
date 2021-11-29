@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import goddesses from '../lib/images/ys-goddesses.jpg';
 import MainSection from '../components/home/MainSection';
 import TodaysSection from '../components/home/TodaysSection';
-import RouterSection from '../components/home/RouterSection';
+import ActivitySection from '../components/home/ActivitySection';
 import PlayerSection from '../components/home/PlayerSection';
 import Footer from '../components/Footer';
 
 const Home = (props) => {
-  const history = useHistory();
-  const [isHistory, setIsHistory] = useState(false);
-  const [isGallery, setIsGallery] = useState(false);
-  const [isTournament, setIsTournament] = useState(false);
-
   return (
     <>
       <MainSection />
       <TodaysSection />
-      <RouterSection />
+      <ActivitySection />
       <PlayerSection />
       <Footer />
 

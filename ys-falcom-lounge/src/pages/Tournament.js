@@ -1,128 +1,260 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Tab from '../components/Tab';
+import Modal from '../components/Modal';
 
 const Tournament = (props) => {
+  const [isModal, setIsModal] = useState(false);
+  const [start, setStart] = useState(false);
   const [active, setActive] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
   const [showChronicles, setShowChronicles] = useState(false);
 
-  // var myPix = new Array("images/lion. jpg", "images/tiger. jpg", "images/bear. jpg");
-  // var randomNum = Math. floor(Math. random() * myPix. length);
+  // let charImage = new Array("images/lion. jpg", "images/tiger. jpg", "images/bear. jpg");
+  // let randomImage = Math. floor(Math. random() * myPix. length);
   // document.getElementById("myPicture").src = myPix[randomNum];
+  const [url, setUrl] = useState('');
+  // const [isLoaded, setIsLoaded] = useState(true);
+  const inputImageRef = useRef(null);
+  const [previewSource, setPreviewSource] = useState(url);
 
-  const handleTabClick = (e) => {
-    let text = e.target.textContent;
+  const handleImageRef = () => {
+    inputImageRef.current.click();
+  };
 
-    setActive(true);
+  const handleFileInputChange = (e) => {
+    const file = e.target.files[0];
+    previewFile(file);
+  };
 
-    if (text === 'Origin') {
-      setShowOrigin(true);
-    } else if (text === 'Chronicles+') {
-      setShowChronicles(true);
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+    };
+  };
+
+  const characterJSON = [
+    {
+      num: 4,
+      name: 'sahad',
+    },
+    {
+      num: 4,
+      name: 'olga',
+    },
+    {
+      num: 4,
+      name: 'quina',
+    },
+    {
+      num: 4,
+      name: 'ricotta',
+    },
+    {
+      num: 4,
+      name: 'reja',
+    },
+    {
+      num: 4,
+      name: 'sarai',
+    },
+    {
+      num: 4,
+      name: 'rastell',
+    },
+    {
+      num: 4,
+      name: 'silvia',
+    },
+    {
+      num: 4,
+      name: 'shoebill',
+    },
+    {
+      num: 5,
+      name: 'sister_nia',
+    },
+    {
+      num: 5,
+      name: 'thanatos',
+    },
+    {
+      num: 5,
+      name: 'sir_carlan',
+    },
+    {
+      num: 5,
+      name: 'adol',
+    },
+    {
+      num: 5,
+      name: 'austin',
+    },
+    {
+      num: 5,
+      name: 'dana',
+    },
+    {
+      num: 5,
+      name: 'captain_barbaros',
+    },
+    {
+      num: 5,
+      name: 'dana_gratika',
+    },
+    {
+      num: 5,
+      name: 'captain_reed',
+    },
+    {
+      num: 5,
+      name: 'dana_luminous',
+    },
+    {
+      num: 6,
+      name: 'hummel',
+    },
+    {
+      num: 6,
+      name: 'euron',
+    },
+    {
+      num: 6,
+      name: 'franz',
+    },
+    {
+      num: 6,
+      name: 'dina',
+    },
+    {
+      num: 6,
+      name: 'io',
+    },
+    {
+      num: 6,
+      name: 'katthew',
+    },
+    {
+      num: 6,
+      name: 'kiergaard',
+    },
+    {
+      num: 6,
+      name: 'laxha',
+    },
+    {
+      num: 6,
+      name: 'kathleen',
+    },
+    {
+      num: 6,
+      name: 'licht',
+    },
+    {
+      num: 6,
+      name: 'little_paro',
+    },
+    {
+      num: 6,
+      name: 'master_kong',
+    },
+    {
+      num: 7,
+      name: 'miralda',
+    },
+  ];
+
+  const fetchedImages = [];
+
+  const getImages = () => {
+    for (let char of characterJSON) {
+      fetch(`https://res.cloudinary.com/djqrwt65l/image/upload/v163819062${char.num}/Ys%20Project/Lacrimosa/${char.name}.webp`, {
+        method: 'GET',
+      })
+        .then((res) => {
+          console.log(res.url);
+          fetchedImages.push(res.url); // 렌더링이 32번 일어남...
+          console.log(fetchedImages);
+        })
+        .catch((err) => console.log(err));
     }
   };
 
+  console.log(fetchedImages);
+
+  useEffect(() => {
+    setIsModal(false);
+    // if (!isLoaded) {
+    getImages();
+    // }
+  }, []);
+
+  console.log(fetchedImages.length);
+  let firstPic = Math.floor(Math.random() * fetchedImages.length);
+  console.log(firstPic);
+  // let secondPic = Math.floor(Math.random() * fetchedImages.length);
+
+  // useEffect(() => {
+  //   setIsModal(false);
+  // }, [isModal]);
+
   return (
     <>
-      <HeaderGroup>
-        <Title>Bias Tournament</Title>
-      </HeaderGroup>
-      <TabContainer>
-        <TabList onClick={handleTabClick}>
-          <TabDiv>Origin</TabDiv>
-          <TabDiv>Chronicles+</TabDiv>
-          <TabDiv>Celceta</TabDiv>
-          <TabDiv>Lacrimosa</TabDiv>
-          <TabDiv>Monstrum</TabDiv>
-        </TabList>
-      </TabContainer>
-      <Container>
-        <TabContent>
-          <CharacterCard>
-            {showOrigin ? '유고' : null}
-            {showChronicles ? '아돌' : null}
-          </CharacterCard>
-          <CharacterCard>
-            {showOrigin ? '토르' : null}
-            {showChronicles ? '피나' : null}
-          </CharacterCard>
-        </TabContent>
-        {/* <TabContent>
-          <p>이스 크로니클스 캐릭터</p>
-        </TabContent>
-        <TabContent>
-          <p>이스 셀세타 캐릭터</p>
-        </TabContent>
-        <TabContent>
-          <p>이스 라크리모사 캐릭터</p>
-        </TabContent>
-        <TabContent>
-          <p>이스 몬스트룸 캐릭터</p>
-        </TabContent> */}
-      </Container>
+      {isModal ? (
+        <Modal setIsModal={setIsModal} />
+      ) : (
+        <Container>
+          <ImageContainer>
+            {fetchedImages && (
+              <>
+                <FirstImage src={previewSource ? previewSource : null} onClick={handleImageRef} alt='Random1'></FirstImage>
+                <MiddleText>VS.</MiddleText>
+                <SecondImage src={previewSource ? previewSource : null} onClick={handleImageRef} alt='Random2'></SecondImage>
+              </>
+            )}
+          </ImageContainer>
+        </Container>
+      )}
     </>
   );
 };
 
-const HeaderGroup = styled.div`
-  width: 85%;
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem 10vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding-top: 2rem;
+`;
+
+const ImageContainer = styled.div`
+  width: 85%;
+  height: 80%;
+  background: #ebeaea;
+  display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
-const Title = styled.div`
-  width: 100%;
-  margin: 20px 0 16px;
+const FirstImage = styled.img`
+  width: 35%;
+  height: 75%;
+  background: lightyellow;
+`;
+
+const MiddleText = styled.p`
   font-size: 30px;
   font-weight: 700;
-  display: flex;
-  justify-content: flex-start;
+  margin: 0 1.5rem;
 `;
 
-const TabContainer = styled.div`
-  width: 100%;
-  min-height: 50px;
-`;
-
-const TabList = styled.ul`
-  border-bottom: 1px solid #ccc;
-
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-`;
-
-const TabDiv = styled.li`
-  display: block;
-  padding: 10px 20px 10px 20px;
-  float: left;
-  margin-right: -1px;
-  margin-bottom: -1px;
-  color: grey;
-  text-decoration: none;
-  cursor: pointer;
-`;
-
-const Container = styled.div`
-  width: 95%;
-`;
-
-const TabContent = styled.div`
-  width: 100%;
-  padding: 18px;
-  min-height: 50vh;
-  display: flex;
-  justify-content: space-around;
-  background: lightgoldenrodyellow;
-`;
-
-const CharacterCard = styled.div`
-  min-width: 200px;
-  max-height: 400px;
+const SecondImage = styled.img`
+  width: 35%;
+  height: 75%;
   background: lightgreen;
 `;
 

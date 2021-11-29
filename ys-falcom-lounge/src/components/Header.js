@@ -86,7 +86,7 @@ const Button = styled.button`
   width: 70px;
   padding: 8px 0;
   border-radius: 5px;
-  border: 1px solid #69ba5e;
+  border: 1px solid #113a0c;
   background-color: transparent;
   color: #69ba5e;
   font-size: 18px;
